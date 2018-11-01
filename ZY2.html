@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第二次web作业</title>
+		<style>table {
+	margin: 0 auto;
+}</style>
+	</head>
+	<body>
+	<table border="2" cellspacing="0" width="50%">
+	<caption><b>高考志愿填报表</b></caption>
+	<tr>
+	<th height="20px" colspan="5" bgcolor="aqua">基本信息</td>	
+
+	</tr>
+	<tr>
+	<th height="50px" ><label>姓名：</label><input type="text" size="4"></th>	
+	<th height="50px" ><label>性别：</label><input name="sex" type="radio">男<input name="sex" type="radio">女</th>
+	<th height="50px"><label>年龄：</label><input type="number" max="120" min="0"</th>	
+	<th height="50px"><label>出生年月：</label><input type="date" max="june" </th>
+	<th height="50px" colspan="2" rowspan="2"><img src="img/IMG_20180915_151656.jpg" height="200px"></td>	
+		
+	</tr>	
+	<tr>
+	<th height="50px" colspan="2"><label>联系电话：</label><input type="tel"</th>	
+	<th height="50px" colspan="2"><label>毕业学校：</label><input type="text" /></th>		
+	</tr>
+	<tr>
+	<th height="50px"><label>家庭成员数：</label><input input min="1" max="30" id="range" oninput="change()" type="range"</th>	
+	<th height="50px"><label>EMAIL:</label><input type="email"</th>	
+	<th height="50px"><label>所在省份：</label><input type="text" size="3"</td>	
+	<th height="50px"><label>健康状况:</label><select ><option>健康</option><option>残疾</option></select></td>	
+	<th height="50px" colspan="2"><label>身份证号码：</label><input type="text" size="15"</td>	
+	</tr>
+	<tr>
+	<th height="50px"><label>籍贯:</label><input type="text"</th>
+	<th height="50px"><label>身高(cm)：</label><input type="number" max="250" min="0"</th>
+	<th height="50px"><label>体重(kg):</label><input type="number" max="250" min="0"</th>
+	<th height="50px"><label>户籍性质：</label><br><input name="sex" type="radio">城市<input name="sex" type="radio">农村</th>
+	<th height="50px" colspan="2"><label>QQ:</label><br/><input type="text" size="15"><br><label>密码：<input  type="password" size="15"</label></td>
+	</tr>
+	<tr>
+	<th height="50px"><label>喜爱的颜色：</label><input type="color"</th>	
+	<th height="50px"><label>喜爱的科目：</label><input type="checkbox">语文<input type="checkbox">数学<input type="checkbox">英语<input type="checkbox">生物<input type="checkbox">物理<input type="checkbox">化学</td>	
+	<th height="50px"><label>兴趣爱好：</label><input list="int"/><datalist id="int"><option value="唱歌"><option value="跳舞"><option value="阅读"><option value="运动"></datalist></th>	
+    <th height="50px"><label>民族：</label><input list="Ethnic group"/><datalist id="Ethnic group"><option>汉族</option></datalist></th>
+    <th height="50px" colspan="2" rowspan="2"><legend>高考成绩：</legend><label>语文：</label><input type="number" max="150" min="0"/><label><br>数学：</label><input type="number" max="150" min="0"<label><br>英语：</label><input type="number" max="150" min="0"<label><br>综合：</label><input type="number" max="300" min="0"<label><br>总分：</label><input type="number"max="750" min="0"</tr>
+	
+	<tr>
+	<th height="50px" colspan="4"><label>第一志愿：</label><input type="text" size="60" <label>是否服从调剂</label><input name="sex" type="radio">是<input name="sex" type="radio">否<br><label>第二志愿：</label><input type="text" size="60" <label>是否服从调剂</label><input name="sex" type="radio">是<input name="sex" type="radio">否<label><br>第三志愿：</label><input type="text" size="60" <label>是否服从调剂</label><input name="sex" type="radio">是<input name="sex" type="radio">否</th>	
+	</tr>
+	<tr>
+	<th height="50px" colspan="5"><label>家庭住址:</label><input type="search" size="100"</th>
+	</tr>
+	<tr>
+	<th height="20px" colspan="5" bgcolor="aqua">个人简历</th>	
+	</tr>
+	<tr>
+	<th height="50px" >特长</th>
+	<th height="50px" colspan="4" ><input type="text" size="100"</td>	
+	</tr>
+	<tr>
+	<th height="50px" >曾担任职务</th>
+	<th height="50px" colspan="4" ><input type="text" size="100"</th>	
+	</tr>
+	<tr>
+	<th height="50px" >能力</th>
+	<th height="50px" colspan="4" ><input type="text" size="100"</td>	
+	</tr>
+	<tr>
+	<th height="50px" >性格</th>
+	<th height="50px" colspan="4" ><input type="text" size="100"</td>	
+	</tr>
+	<tr>
+	<th height="50px" >获奖情况</th>
+	<th height="50px" colspan="4" ><input type="text" size="100"</th>	
+	</tr>
+	<tr>
+	<th height="20px" colspan="5" bgcolor="aqua">家庭成员信息</th>	
+	</tr>
+	<tr>
+	<th height="50px" rowspan="2"><label>姓名：</label><input type="text" size="4"></th>
+	<th height="50px"><label>关系：</label><input type="text" size="4"></th>
+	<th height="50px"><label>职务：</label><input type="text" size="4"></th>
+	<th height="50px" colspan="2"><label>工作地址：</label><input type="text" size="20"></th>
+	</tr>
+	<tr>
+	<th height="50px"><label>政治面貌：</label><input type="text" size="4"></th>
+	<th height="50px"><label>户口类型：</label><select><option>城市</option><option>农村</option></select></th>
+	<th height="50px" colspan="2"><label>联系电话：</label><input type="tel"</th>
+	</tr>
+		<tr>
+	<th height="50px" rowspan="2"><label>姓名：</label><input type="text" size="4"></th>
+	<th height="50px"><label>关系：</label><input type="text" size="4"></th>
+	<th height="50px"><label>职务：</label><input type="text" size="4"></th>
+	<th height="50px" colspan="2"><label>工作地址：</label><input type="text" size="20"></th>
+	</tr>
+	<tr>
+	<th height="50px"><label>政治面貌：</label><input type="text" size="4"></th>
+	<th height="50px"><label>户口类型：</label><select><option>城市</option><option>农村</option></select></th>
+	<th height="50px" colspan="2"><label>联系电话：</label><input type="tel"</th>
+	</tr>
+		<tr>
+	<th height="50px" rowspan="2"><label>姓名：</label><input type="text" size="4"></th>
+	<th height="50px"><label>关系：</label><input type="text" size="4"></th>
+	<th height="50px"><label>职务：</label><input type="text" size="4"></th>
+	<th height="50px" colspan="2"><label>工作地址：</label><input type="text" size="20"></th>
+	</tr>
+	<tr>
+	<th height="50px"><label>政治面貌：</label><input type="text" size="4"></th>
+	<th height="50px"><label>户口类型：</label><select><option>城市</option><option>农村</option></select></th>
+	<th height="50px" colspan="2"><label>联系电话：</label><input type="tel"</th>
+	</tr>
+	<tr>
+	<th height="20px" colspan="4"><fieldset>填写完毕！</fieldset></th>
+	<th height="20px"><input type="reset" /><input type="submit"</th>	
+	</tr>
+	<br>
+	<a href="https://www.baidu.com/?tn=80035161_1_dg" target="_blank">如果有疑问请点击我！！！</a>
+
+	</body>
+</html>
