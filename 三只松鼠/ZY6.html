@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.box1 {
+				overflow: auto;
+				height: 130px;
+			}
+			
+			.box1-1 {
+				width: 320px;
+				height: 120px;
+				float: left;
+			}
+			
+			.box1-2 {}
+			
+			.text1 {
+				border-color: red;
+				width: 620px;
+				height: 40px;
+				position: absolute;
+				left: 350px;
+				top: 40px;
+				font-size: x-large;
+			}
+			
+			.button1 {
+				background-color: red;
+				height: 46px;
+				color: white;
+				width: 100px;
+				font-weight: 900;
+				position: absolute;
+				left: 880px;
+				top: 40px;
+			}
+			
+			a {
+				text-decoration: none;
+				color: #806F66;
+			}
+			
+			a:hover {
+				color: red;
+			}
+			
+			label {
+				margin: 0 0 0 50px;
+			}
+			
+			span {
+				position: absolute;
+				top: 148px;
+				left: 1100px;
+			}
+			
+			.box2 {
+				height: 160px;
+				width: 1150px;
+				border: solid #D1CCC7 3px;
+				margin: 20px 0 0 50px;
+			}
+			
+			.button2 {
+				background-color: #806F66;
+				width: 200px;
+				position: absolute;
+				left: 920px;
+				top: 260px;
+				color: white;
+				height: 40px;
+			}
+			
+			.button2:hover {
+				background-color: #927C6F;
+			}
+			
+			.box3 {
+				height: 88px;
+				width: 1150px;
+				border: solid #D1CCC7 3px;
+				margin: 20px 0 0 50px;
+			}
+			
+			pre {
+				display: inline;
+			}
+			
+			.img1 {
+				margin: 20px 0 0 45px;
+			}
+			
+			.box4 {
+				border: solid #806F66 2px;
+				margin: 10px 0 0 35px;
+				width: 1170px;
+				float: left;
+				padding: 0 0 0 10px;
+				display: flex;
+				flex-wrap: wrap;
+			}
+			
+			.box4-1 {
+				border: solid #D1CCC7 2px;
+				float: left;
+				width: 206px;
+				height: 400px;
+				margin: 20px 15px 0 0;
+				overflow: hidden;
+				padding: 4px;
+			}
+			
+			.box4-1:hover {
+				background-color: red;
+			}
+			
+			@media only screen and (min-width: 100px) and (max-width: 600px) {
+				.box4 .box4-1 {
+					flex-basis: 100%;
+				}
+			}
+			
+			@media only screen and (min-width: 600px) and (max-width: 800px) {
+				.box4 .box4-1 {
+					flex-basis: 40%;
+				}
+			}
+			
+			@media only screen and (min-width: 800px) and (max-width: 1100px) {
+				.box4 .box4-1 {
+					flex-basis: 30%;
+				}
+			}
+			
+			@media only screen and (min-width:1170px) {
+				.box4 {
+					flex-wrap: wrap;
+				}
+			}
+			.dropdown {
+				float: left;
+				border: #D1CCC7 solid 1px;
+				width: 100px;
+				height: 20px;
+				text-align: center;
+			}
+			
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+			}
+			
+			.dropdown-content a {
+				color: black;
+				text-decoration: none;
+				display: block;
+			}
+			
+			.dropdown-content a:hover {
+				background-color: #f1f1f1;
+				color: red;
+			}
+			
+			.dropdown:hover .dropdown-content {
+				display: block;
+			}
+			.box5{
+				width: 1150px;
+				height: 20px;
+				padding: 5px;
+				background-color: #FAF9F9;
+				margin: 20px 0 0 50px;
+			}
+			.box5-1{
+				width: 60px;
+				height: 20px;
+				float: left;
+				border: #D1CCC7 solid 1px;
+				text-align: center;
+			}
+			.box5-1 a:hover {
+				background-color: #f1f1f1;
+				color: red;
+			}
+			.box5-1:hover{
+				background-color: #f1f1f1 ;
+			}
+			.text3{
+				width: 60px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box1">
+			<div class="box1-1">
+				<a href="https://www.tmall.com/?spm=a220m.1000862.a2226n0.1.a24e5130AmLecg"><img src="img/320X120.png" height="120px" width="320px"></a>
+			</div>
+			<div class="box1-2">
+				<input class="text1" type="text" placeholder="搜索 天猫 商品/品牌/店铺" />
+				<button class="button1">搜索</button>
+			</div>
+		</div>
+		<hr />
+		<label><a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000728.1.3add46b1lRKUP8&style=sg&sort=d&user_id=880734502&from=_1_&stype=search">全部</a>></label>
+		<input type="text" placeholder="在本店搜索" />
+		<span> 共642件商品</span>
+		<div class="box2">
+			<a href="https://sanzhisongshu.tmall.com/shop/view_shop.htm?spm=a220m.1000862.1000730.1.434a46b1GpeU1w&user_number_id=880734502&rn=4949eefa12401efbf3290813c1e79f78"><img src="img/160X160.png" height="160px" width="160px" /></a>
+			<img src="img/1150X157.png" height="160px" width="800px">
+			<a href="https://sanzhisongshu.tmall.com/shop/view_shop.htm?spm=a220m.1000862.1000730.3.566246b1BCDnav&user_number_id=880734502&rn=74eb7c23b1857c14274974a07a21fbdb"><button class="button2">进入店铺        》</button></a>
+		</div>
+		<div class="box3">
+			<table border="0" cellpadding="0">
+				<tr>
+					<td rowspan="2"><img src="img/166X86.png" height="86px" width="166px" </td>
+						<td>
+							<pre>      </pre>
+							<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000721.1.4aa346b1lBo2la&cat=54978001&style=sg&sort=d&user_id=880734502&from=sn_1_cat&stype=search#J_crumbs
+">休闲零食</a>
+							<pre>              </pre>
+							<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000721.2.4aa346b1keLB0H&cat=50514008&style=sg&sort=d&user_id=880734502&from=sn_1_cat&stype=search#J_crumbs">天猫超市</a>
+							<pre>              </pre>
+							<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000721.3.4aa346b1F2LFbk&cat=50099890&style=sg&sort=d&user_id=880734502&from=sn_1_cat&stype=search#J_crumbs">各地茗茶</a>
+							<pre>              </pre>
+							<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000721.4.4aa346b16tBEwK&cat=54986001&style=sg&sort=d&user_id=880734502&from=sn_1_cat&stype=search#J_crumbs">粮油调味</a>
+							<pre>              </pre>
+							<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000721.5.4aa346b18mNaOP&cat=52792006&style=sg&sort=d&user_id=880734502&from=sn_1_cat&stype=search#J_crumbs">天猫国际</a>
+						</td>
+				</tr>
+				<tr>
+					<td>
+						<pre>      </pre>
+						<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000721.6.4aa346b1ZhjCQb&cat=54980001&style=sg&sort=d&user_id=880734502&from=sn_1_cat&stype=search#J_crumbs">冲饮</a>
+						<pre>                   </pre>
+						<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000721.7.4aa346b1NjUACf&cat=50072030&style=sg&sort=d&user_id=880734502&from=sn_1_cat&stype=search#J_crumbs">参茸滋补</a>
+						<pre>              </pre>
+						<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000721.8.4aa346b1F8tYtG&cat=54984001&style=sg&sort=d&user_id=880734502&from=sn_1_cat&stype=search#J_crumbs">生鲜水果</a>
+						<pre>              </pre>
+						<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000721.9.4aa346b1qOjc6a&cat=201346016&style=sg&sort=d&user_id=880734502&from=sn_1_cat&stype=search#J_crumbs">天猫全球官方店</a>
+						<pre>       </pre>
+						<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000721.10.4aa346b1D4mV3d&cat=50105688&style=sg&sort=d&user_id=880734502&from=sn_1_cat&stype=search#J_crumbs">进口食品</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="box5">
+			<div class="dropdown">
+							<a href="#" class="dropbtn">默认排序</a>
+							<div class="dropdown-content">
+								<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000724.1.7ecb46b1DyvgYR&style=sg&sort=p&user_id=880734502&stype=search#J_Filter"><img src="img/QQ图片20181106123902.png" width="20px" height="20px" />价格升序</a>
+								<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000724.2.7ecb46b1Q8K9Hj&style=sg&sort=pd&user_id=880734502&stype=search#J_Filter"><img src="img/QQ图片20181106123943.png" width="20px" height="20px" />价格降序</a>
+								<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000724.3.7ecb46b1BRn1UP&style=sg&sort=td&user_id=880734502&stype=search#J_Filter"><img src="img/QQ图片20181106123938.png" width="20px" height="20px" />总销量从高到低</a>
+								<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000724.4.7d0446b10Ff6la&style=sg&sort=d&user_id=880734502&stype=search#J_Filter"><img src="img/QQ图片20181106123934.png" width="20px" height="20px" />月销量从高到低</a>
+								<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000724.5.2ee146b1wiD1So&style=sg&sort=pt&user_id=880734502&stype=search#J_Filter"><img src="img/QQ图片20181106123930.png" width="20px" height="20px" />按发布时间排序</a>
+								<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000724.6.2ee146b1YceiQM&style=sg&user_id=880734502&stype=search#J_Filter">恢复默认排序</a>
+							</div>
+						</div>
+			<div class="box5-1">
+				<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000724.7.7ecb46b1cfBVLl&style=sg&sort=td&user_id=880734502&stype=search#J_Filter">总销量↓</a>
+			</div>
+			<div class="box5-1">
+				<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000724.8.7ecb46b1viCRfS&style=sg&sort=d&user_id=880734502&stype=search#J_Filter">销量↓</a>
+			</div>
+			<div class="box5-1">
+				<a href="https://list.tmall.com/search_shopitem.htm?spm=a220m.1000862.1000724.9.7ecb46b1pnDitW&style=sg&sort=p&user_id=880734502&stype=search#J_Filter">价格</a>
+			</div>
+			<input class="text3" type="text" placeholder="¥请输入最低价" />
+			<input class="text3" type="text" placeholder="¥请输入最高价" />
+		</div>
+		<div class="box4">
+			<div class="box4-1">
+				<a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.1.168d5130rhocQI&id=527318953321&is_b=1&cat_id=54978001&rn=c10749bd3391497b4aa1347ece2b3125"><img src="img/O1CN011j7xXkj4DIJOiJf_!!880734502.jpg_220x220.jpg" width="206" height="250px"></a><img src="img/麻薯.png" width="206px" height="145px"></div>
+			<div class="box4-1">
+				<a href="https://detail.tmall.com/item.htm?spm=a220o.1000855.1998025129.1.b34fc1bcnteB3H&pvid=c48fcb54-5726-4289-9d96-83e778e46417&pos=1&acm=03054.1003.1.2768562&id=562581923847&scm=1007.16862.95220.23864_0&utparam={%22x_hestia_source%22:%2223864%22,%22x_object_type%22:%22item%22,%22x_mt%22:0,%22x_src%22:%2223864%22,%22x_pos%22:1,%22x_pvid%22:%22c48fcb54-5726-4289-9d96-83e778e46417%22,%22x_object_id%22:562581923847}"><img src="img/O1CN011j7xXlPwdr9yKsf_!!880734502.jpg_220x220.jpg" width="206" height="250px"></a><img src="img/团子.png" width="206px" height="145px"></div>
+			<div class="box4-1">
+				<a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.11.69455130D3v8QZ&id=562395925542&is_b=1&cat_id=54978001&rn=733279701da1e0e480e257158a1becf6"><img src="img/O1CN011j7xYavbdkkPNwM_!!880734502.jpg_220x220.jpg" width="206" height="250px"></a><img src="img/碧根果.png" width="206px" height="145px"></div>
+			<div class="box4-1">
+				<a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.61.168d5130rhocQI&id=523400233003&is_b=1&cat_id=54978001&rn=c10749bd3391497b4aa1347ece2b3125"><img src="img/O1CN011j7xYr1hSMIsqVs_!!880734502.jpg_220x220.jpg" width="206" height="250px"></a><img src="img/猪肉铺.png" width="206px" height="145px"></div>
+			<div class="box4-1">
+				<a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.37.a24e5130AmLecg&id=558587300390&is_b=1&cat_id=54978001&rn=5eed4ea7778ffd982123a94c9e1ce4b4"><img src="img/O1CN011j7xYUvavealxzT_!!880734502.jpg_220x220.jpg" width="206" height="250px"></a><img src="img/坚果.png" width="206px" height="145px"></div>
+			<div class="box4-1">
+				<a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.21.69455130D3v8QZ&id=562299716830&is_b=1&cat_id=54978001&rn=733279701da1e0e480e257158a1becf6"><img src="img/TB25ohdvBjTBKNjSZFwXXcG4XXa_!!880734502.jpg_220x220.jpg" width="206" height="250px"></a><img src="img/腰果.png" width="206px" height="145px"></div>
+			<div class="box4-1">
+				<a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.6.6d3e5130nLjm02&id=559311465458&is_b=1&cat_id=54978001&rn=2e88be823de7da162021ea84231f9fff"><img src="img/TB2ESQkvXooBKNjSZPhXXc2CXXa_!!880734502.jpg_220x220.jpg" width="206" height="250px"></a><img src="img/阳光.png" width="206px" height="145px"></div>
+			<div class="box4-1">
+				<a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.16.6d3e5130nLjm02&id=553719140638&is_b=1&cat_id=54978001&rn=2e88be823de7da162021ea84231f9fff"><img src="img/TB2fj2cvA7mBKNjSZFyXXbydFXa_!!880734502.jpg_220x220.jpg" width="206" height="250px"></a><img src="img/牛肉块.png" width="206px" height="145px"></div>
+			<div class="box4-1">
+				<a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.173.168d5130rhocQI&id=45625307529&is_b=1&cat_id=54978001&rn=c10749bd3391497b4aa1347ece2b3125"><img src="img/TB2ifNyvkZmBKNjSZPiXXXFNVXa_!!880734502.jpg_220x220.jpg" width="206" height="250px"></a><img src="img/开心果.png" width="206px" height="145px"></div>
+			<div class="box4-1">
+				<a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.51.69455130D3v8QZ&id=567838991005&is_b=1&cat_id=54978001&rn=733279701da1e0e480e257158a1becf6"><img src="img/TB2kvaAvyMnBKNjSZFoXXbOSFXa_!!880734502.jpg_220x220.jpg" width="206" height="250px"></a><img src="img/山药片.png" width="206px" height="145px"></div>
+			<div class="box4-1">
+				<a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.146.6d6b5130ULG9zt&id=557906531112&is_b=1&cat_id=54978001&rn=a0a2281d312da8bef7acf575f863d2cc"><img src="img/TB2lEXmvtcnBKNjSZR0XXcFqFXa_!!880734502.jpg_220x220.jpg" width="206" height="250px"></a><img src="img/蚕豆.png" width="206px" height="145px"></div>
+			<div class="box4-1">
+				<a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.106.69455130D3v8QZ&id=571511639661&is_b=1&cat_id=54978001&rn=733279701da1e0e480e257158a1becf6"><img src="img/TB2pFb8vDmWBKNjSZFBXXXxUFXa_!!880734502.jpg_220x220.jpg" width="206" height="250px"></a><img src="img/牛肉.png" width="206px" height="145px"></div>
+			<div class="box4-1">
+				<a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.6.69455130D3v8QZ&id=560823257520&is_b=1&cat_id=54978001&rn=733279701da1e0e480e257158a1becf6&skuId=3979726647152"><img src="img/TB2wBWgvj7nBKNjSZLeXXbxCFXa_!!880734502.jpg_220x220.jpg" width="206" height="250px"></a><img src="img/夏威夷果.png" width="206px" height="145px"></div>
+			<div class="box4-1">
+				<a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.41.69455130D3v8QZ&id=45735764241&is_b=1&cat_id=54978001&rn=733279701da1e0e480e257158a1becf6"><img src="img/TB2Yb2WvyQnBKNjSZFmXXcApVXa_!!880734502.jpg_220x220.jpg" width="206" height="250px"></a><img src="img/芒果.png" width="206px" height="145px"></div>
+			<div class="box4-1">
+				<a href="https://detail.tmall.com/item.htm?spm=a220m.1000862.1000725.101.69455130D3v8QZ&id=527338012559&is_b=1&cat_id=54978001&rn=733279701da1e0e480e257158a1becf6"><img src="img/TB2ZTfSvyMnBKNjSZFoXXbOSFXa_!!880734502.jpg_220x220.jpg" width="206" height="250px"></a><img src="img/鱿鱼丝.png" width="206px" height="145px"></div>
+		</div>
+	</body>
+
+</html>
