@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			function createPopup(){
+				a=document.getElementById("box");
+				x=document.createElement("a");
+				x.innerHTML="<br />"+"我说所有的酒，都不如你";
+				x.setAttribute("href","#");
+				x.style.color="white";
+				x.style.backgroundColor="lightgreen";
+				a.appendChild(x);
+				document.body.appendChild(a);
+			}
+			function chrome(){
+				x=document.getElementById("box");
+			var y=x.childNodes;	
+				for(i=0;i<y.length;i++){
+					if(y[i].tagName=="P") x.removeChild(y[i]);
+				}
+				
+			}
+			function clearImmediate(){
+			var	x=document.getElementById("box");
+			var y=x.childNodes;
+			var loop=y.length;
+			for(i=loop-1;i>=0;i--){
+				if (y[i].tagName=="A") x.removeChild(y[i]);
+			}
+			}
+            function changeAllColor(){
+				var div=document.getElementById("box");
+				var y=div.childNodes;
+				var loop=y.length;
+				for (i=0;i<loop;i++){
+					if(y[i].tagName=="P"||y[i].tagName=="A")
+					y[i].style.backgroundColor="yellow";
+				}
+				
+			}
+			
+		</script>
+		<style>
+			#box{
+				border: double lightskyblue 3px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+		<p id="ppp">我在二环路的里面想着你</p>
+		<p id="ppp">你在远方的山上春风十里</p>
+		<a href="#">飞机飞过车水马龙的城市</a>
+		<br />
+		<a href="#">千里之外      不离开</a>
+		</div>
+		<button onclick="createPopup()">添加一个白色绿底的a元素</button>
+		<button onclick="chrome()">删除所有p元素</button>
+		<button onclick="clearImmediate()">删除所有a元素</button>
+		<button onclick="changeAllColor()">所有元素变色</button>
+	</body>
+</html>
