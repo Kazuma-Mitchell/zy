@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#zzy{
+				margin: 0 300px;
+				width: 700px;
+			}
+			#zzy tr:nth-child(even){
+				background-color: lightskyblue;
+			}
+			#zzy tr:nth-child(odd){
+				background-color: deepskyblue;
+			}
+			#name{
+				width: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script>
+			function capture(data){
+
+					var fff=data.parentNode.parentNode;
+					fff.parentNode.removeChild(fff);
+				}
+			window.onload=function(){
+				var input_botton=document.getElementById("bbb");
+				var count=0;
+				input_botton.onclick = function(){
+					count++;
+					var name=document.getElementById("name").value;
+					var sexs=document.getElementsByName("radio");
+					var table=document.getElementById("ttt");
+					var sex;
+					for (var i=0; i<=1; i++){
+						if (sexs[i].checked==true)
+						{
+							if (sexs[i].value==0) sex="男";
+							else sex="女";
+							break;
+						}
+					}
+					var x=document.createElement("tr");
+					x.innerHTML="<td>"+count+"</td>" + "<td id='xxx"+count+"' onmouseover='havarcolor(this)' onmouseout='outcolor(this)'>"+name+"</td>" + "<td>"+sex+"</td>"+"<td><a id='XX"+count+"' href='#' onclick='capture(this);'>删除</a></td>";
+					table.appendChild(x);
+				}
+				
+			}
+			function havarcolor(ggg){
+				ggg.style.color="aquamarine";
+			}
+			function outcolor(ggg){
+				ggg.style.color="black";
+			}
+				
+		</script>
+		<div id="zzy">
+				<label> 姓名：</label>
+				<input type="text" id="name" />
+				<label> 性别：</label> 
+				男：<input name="radio" type="radio" value="0"/> 
+				女：<input name="radio" type="radio" value="1"/>
+				<button id="bbb">输入</button>
+			<table id="ttt" border="1">
+				<tr>
+				<td width="150px" height="30px">编号</td>
+				<td width="150px" height="30px">姓名</td>
+				<td width="150px" height="30px">性别</td>
+				<td width="150px" height="30px">操作</td>
+				</tr>
+			</table>
+		</div>
+		
+	</body>
+</html>
