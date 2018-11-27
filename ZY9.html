@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<style>
+			#myProgress {
+				width: 50%;
+				background-color: #ddd;
+				margin: 0px auto;
+			}
+			
+			#myBar {
+				width: 10%;
+				height: 30px;
+				background-color: #4CAF50;
+				text-align: center;
+				line-height: 30px;
+				color: white;
+			}
+			h1{
+				margin: 300px auto 20px;
+			}
+		</style>
+		<script>
+			function move() {
+				var elem = document.getElementById("myBar");
+				var width = 10;
+				var id = setInterval(frame, 20);
+
+				function frame() {
+					if(width >= 100) {
+						location.href ="ZY9.1.html"
+					} else {
+						width++;
+						elem.style.width = width + '%';
+						elem.innerHTML = width * 1 + '%';
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<h1 align="center">欢迎来到ZZY的创业项目！</h1>
+
+		<div id="myProgress">
+			<div id="myBar">正在载入ZZY的创业项目...</div>
+		</div>
+
+		<br>
+		<h2 align="center"><button onclick="move()">点击进入</button></h2>
+	</body>
+
+</html>
