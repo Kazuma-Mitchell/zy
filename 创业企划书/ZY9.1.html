@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css'>
+		<link rel="stylesheet" type="text/css" href="css/demo.css">
+		<style>
+			html,
+			body,
+			.page {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				-webkit-transition: all .6s cubic-bezier(.5, .2, .2, 1.1);
+				-o-transition: all .6s cubic-bezier(.5, .2, .2, 1.1);
+				transition: all .6s cubic-bezier(.5, .2, .2, 1.1);
+				color: #fff;
+				overflow: hidden;
+			}
+			
+			* {
+				font-family: 'open sans', 'lato', 'helvetica', sans-serif;
+			}
+			
+			.page {
+				position: absolute;
+			}
+			
+			#p1 {
+				left: 0;
+			}
+			
+			#p2,
+			#p3,
+			#p4,
+			#p5 {
+				left: 182%;
+				width: 91%;
+			}
+			
+			#p1 {
+				background: deepskyblue;
+			}
+			
+			#p2 {
+				background: #90EE90;
+			}
+			
+			#p3 {
+				background: #FFFF00;
+			}
+			
+			#p4 {
+				background: lightpink;
+			}
+			
+			#p5 {
+				background: #FF8C00;
+			}
+			
+			#t2:target #p2,
+			#t3:target #p3,
+			#t4:target #p4,
+			#t5:target #p5 {
+				-webkit-transform: translateX(-190%);
+				-ms-transform: translateX(-190%);
+				-o-transform: translateX(-190%);
+				transform: translateX(-190%);
+				-webkit-transition-delay: .4s !important;
+				-o-transition-delay: .4s !important;
+				transition-delay: .4s !important;
+			}
+			
+			#t2:target #p1,
+			#t3:target #p1,
+			#t4:target #p1,
+			#t5:target #p1 {
+				background: black;
+			}
+			
+			#t2:target #p1 .icon,
+			#t3:target #p1 .icon,
+			#t4:target #p1 .icon,
+			#t5:target #p1 .icon {
+				-webkit-filter: blur(3px);
+				filter: blur(3px);
+			}
+			
+			.icon {
+				color: #fff;
+				font-size: 32px;
+				display: block;
+			}
+			
+			ul .icon:hover {
+				opacity: 0.5;
+			}
+			
+			.page .icon .title {
+				line-height: 2;
+			}
+			
+			#t2:target ul .icon,
+			#t3:target ul .icon,
+			#t4:target ul .icon,
+			#t5:target ul .icon {
+				-webkit-transform: scale(.6);
+				-ms-transform: scale(.6);
+				-o-transform: scale(.6);
+				transform: scale(.6);
+				-webkit-transition-delay: .25s;
+				-o-transition-delay: .25s;
+				transition-delay: .25s;
+			}
+			
+			#t2:target #dos,
+			#t3:target #tres,
+			#t4:target #cuatro,
+			#t5:target #cinco {
+				-webkit-transform: scale(1.2) !important;
+				-moz-transform: scale(1.2) !important;
+				-o-transform: scale(1.2) !important;
+				transform: scale(1.2) !important;
+			}
+			
+			ul {
+				position: fixed;
+				z-index: 1;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+				height: 600px;
+				width: 10%;
+				padding: 0;
+				text-align: center;
+			}
+			
+			#menu .icon {
+				margin: 30px 0;
+				-webkit-transition: all .5s ease-out !important;
+				-moz-transition: all .5s ease-out !important;
+				-o-transition: all .5s ease-out !important;
+				transition: all .5s ease-out !important;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			.title,
+			.hint {
+				display: block;
+			}
+			
+			.title {
+				font-size: 38px;
+			}
+			
+			.hint {
+				font-size: 13px;
+			}
+			
+			#p4 .hint {
+				display: inherit !important;
+			}
+			
+			.hint a {
+				color: yellow;
+				-webkit-transition: all 250ms ease-out;
+				-moz-transition: all 250ms ease-out;
+				-o-transition: all 250ms ease-out;
+				transition: all 250ms ease-out;
+			}
+			
+			.hint a:hover {
+				color: #FFF;
+			}
+			
+			.line-trough {
+				text-decoration: line-through;
+			}
+			
+			.page .icon {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 10%;
+				left: 0;
+				width: 270px;
+				height: 170px;
+				margin: auto;
+				text-align: center;
+				font-size: 80px;
+				line-height: 1.3;
+				-webkit-transform: translateX(360%);
+				-moz-transform: translateX(360%);
+				-o-transform: translateX(360%);
+				transform: translateX(360%);
+				-webkit-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+				-moz-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+				-o-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+				transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+			}
+			
+			.page#p1 .icon {
+				height: 220px;
+			}
+			
+			.page#p1 .icon {
+				-webkit-transform: translateX(10%) !important;
+				-ms-transform: translateX(10%) !important;
+				-o-transform: translateX(10%) !important;
+				transform: translateX(10%) !important;
+			}
+			
+			#t2:target .page#p2 .icon,
+			#t3:target .page#p3 .icon,
+			#t4:target .page#p4 .icon,
+			#t5:target .page#p5 .icon {
+				-webkit-transform: translateX(0) !important;
+				-moz-transform: translateX(0) !important;
+				-o-transform: translateX(0) !important;
+				transform: translateX(0) !important;
+				-webkit-transition-delay: 1s;
+				-o-transition-delay: 1s;
+				transition-delay: 1s;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var speed = 1 / 30 * Math.PI;
+				var Q = 5 / 3 * Math.PI;
+				var Q2 = 2 / 3 * Math.PI;
+				var Q3 = 4 / 3 * Math.PI;
+				var Q4 = 6 / 7 * Math.PI;
+				var time = 20;
+				createQuaCircle("svg1");
+				doAnimation(Q, "svg1", speed, time);
+				showText("svg1", "餐饮", "18");
+				doAnimation(Q2, "svg2", speed, time);
+				showText("svg2", "服务", "18");
+				doAnimation(Q3, "svg3", speed, time);
+				showText("svg3", "场所", "18");
+				//创建1/4半圆
+			}
+
+			function doAnimation(Q, id, speed, time) {
+				var oSvg = document.getElementById(id);
+				var oSvgWidth = parseInt((oSvg.curentStyle ? oSvg.curentStyle : window.getComputedStyle(oSvg, null)).width);
+				oSvg.setAttribute("height", oSvgWidth);
+				//创建use元素的组合
+				var bgCircleG = document.createElementNS("http://www.w3.org/2000/svg", "g");
+				bgCircleG.setAttribute("transform", "translate(" + 0.5 * oSvgWidth + "," + 0.5 * oSvgWidth + ")");
+				createGradientBg(bgCircleG, oSvg, oSvgWidth);
+				var currentAngle = 0;
+				var rotateRirection; //旋转的方向如果Q<=Math.PI rotateRirection 为1 大的弧度，如果Q>Math.PI rotateRirection为0 小的弧度
+				if(Q <= 0) {
+					//大圆
+					var smallCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+					smallCircle.setAttribute("cx", 0);
+					smallCircle.setAttribute("cy", 0);
+					smallCircle.setAttribute("r", 0.3 * oSvgWidth + 1);
+					smallCircle.setAttribute("fill", "#e5e5e5");
+					bgCircleG.appendChild(smallCircle);
+					//小圆
+					drawSmallCircle(id, bgCircleG, oSvgWidth);
+				} else if(Q > 0 && Q <= 2 * Math.PI) {
+					rotateRirection = judgeRirection(currentAngle);
+					currentAngle += speed;
+					var tId = null;
+					annimationCircle(id, bgCircleG, currentAngle, oSvgWidth, rotateRirection);
+					tId = setInterval(function() {
+						if(currentAngle <= Q) {
+							rotateRirection = judgeRirection(currentAngle);
+							annimationCircle(id, bgCircleG, currentAngle, oSvgWidth, rotateRirection);
+							currentAngle += speed;
+							if(currentAngle >= Q) {
+								currentAngle = Q;
+								if(Q > Math.PI) {
+									rotateRirection = judgeRirection(currentAngle);
+								}
+								annimationCircle(id, bgCircleG, currentAngle, oSvgWidth, rotateRirection);
+								clearTimeout(tId);
+
+							};
+						} else {
+							currentAngle = Q;
+							rotateRirection = judgeRirection(currentAngle);
+							annimationCircle(id, bgCircleG, currentAngle, oSvgWidth, rotateRirection);
+							clearTimeout(tId);
+
+						}
+					}, time);
+				} else if(Q > 2 * Math.PI) {
+					drawSmallCircle(id, bgCircleG, oSvgWidth);
+				}
+
+			}
+
+			function createQuaCircle(id) {
+				var oSvg = document.getElementById(id);
+				var oSvgWidth = parseInt((oSvg.curentStyle ? oSvg.curentStyle : window.getComputedStyle(oSvg, null)).width);
+				var cr1 = cr2 = 0.5 * oSvgWidth;
+				var oPathElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
+				var d = "M0,0" + " L 0," + -0.3 * oSvgWidth + " A" + 0.3 * oSvgWidth + "," + 0.3 * oSvgWidth + " 0 0,1 " + 0.3 * oSvgWidth + ",0 z";
+				oPathElement.id = "halfCircle";
+				oPathElement.setAttribute("d", d);
+				var omydefs = document.getElementById("mydefs");
+				omydefs.appendChild(oPathElement);
+			}
+
+			function createGradientBg(bgCircleG, oSvg) {
+
+				//创建第一个use元素
+				var bgCircle1 = document.createElementNS("http://www.w3.org/2000/svg", "use");
+				bgCircle1.setAttribute("fill", "url(#lightGreenGradient)");
+				bgCircle1.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", "#halfCircle");
+				//创建第2个use元素并且旋转90度
+				var bgCircle2 = document.createElementNS("http://www.w3.org/2000/svg", "use");
+				bgCircle2.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", "#halfCircle");
+				bgCircle2.setAttribute("fill", "url(#greenDeepGradient)");
+				bgCircle2.setAttribute("transform", "rotate(90)");
+				//创建第3个use元素并且旋转180度
+				var bgCircle3 = document.createElementNS("http://www.w3.org/2000/svg", "use");
+				bgCircle3.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", "#halfCircle");
+				bgCircle3.setAttribute("fill", "url(#greenLightRedGradient)");
+				bgCircle3.setAttribute("transform", "rotate(180)");
+				//创建第4个use元素并且旋转270度
+				//将use元素追加到组合中
+				bgCircleG.appendChild(bgCircle1);
+				bgCircleG.appendChild(bgCircle2);
+				bgCircleG.appendChild(bgCircle3);
+				oSvg.appendChild(bgCircleG);
+			}
+			//动态圆遮挡边用灰色填充
+			function annimationCircle(id, bgCircleG, Q, oSvgWidth, rotateRirection) {
+				if(oPathElement2 = document.getElementById("half" + id)) {
+					bgCircleG.removeChild(oPathElement2);
+				};
+				var oPathElement2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+				var d = "M0,0" + " L" + (0.3 * oSvgWidth) * Math.sin(Q) + "," + (-(0.3 * oSvgWidth) * Math.cos(Q)) + " A" + (0.3 * oSvgWidth) + "," + (0.3 * oSvgWidth) + " 0 " + rotateRirection + ",1 " + "0 " + (-0.3 * oSvgWidth) + " z";
+				oPathElement2.id = "half" + id;
+				oPathElement2.setAttribute("d", d);
+				oPathElement2.setAttribute("stroke", "#e5e5e5");
+				oPathElement2.setAttribute("fill", "#e5e5e5");
+				bgCircleG.appendChild(oPathElement2);
+				drawSmallCircle(id, bgCircleG, oSvgWidth);
+			}
+			// 圆弧中比较小的圆用白色填充
+			function drawSmallCircle(id, bgCircleG, oSvgWidth) {
+				if(smallCircle2 = document.getElementById("smallCircle" + id)) {
+					bgCircleG.removeChild(smallCircle2);
+				};
+				var smallCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+				smallCircle.id = "smallCircle" + id;
+				smallCircle.setAttribute("cx", 0);
+				smallCircle.setAttribute("cy", 0);
+				smallCircle.setAttribute("r", 0.25 * oSvgWidth + 1);
+				smallCircle.setAttribute("stroke", "#FFF");
+				smallCircle.setAttribute("stroke-width", "4");
+				smallCircle.setAttribute("fill", "#FFF");
+				bgCircleG.appendChild(smallCircle);
+			}
+			//rotateRirection 旋转的方向如果<=Math.PI rotateRirection 为1 大的弧度，如果>Math.PI rotateRirection为0 小的弧度
+			function judgeRirection(angle) {
+				if(angle <= Math.PI) {
+					rotateRirection = 1;
+				} else {
+					rotateRirection = 0;
+				}
+				return rotateRirection;
+			}
+
+			function showText(id, value, fontSize) {
+				var oSvg = document.getElementById(id);
+				var oSvgWidth = parseInt((oSvg.curentStyle ? oSvg.curentStyle : window.getComputedStyle(oSvg, null)).width);
+				if(oSvgWidth < 480) {
+					fontSize = 0.8 * parseInt(fontSize);
+				};
+				var otext = document.createElementNS("http://www.w3.org/2000/svg", "text");
+				var oTspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+				otext.setAttribute("x", parseInt(0.5 * oSvgWidth));
+				otext.setAttribute("y", parseInt(0.5 * oSvgWidth));
+				otext.setAttribute("font-size", fontSize);
+				otext.setAttribute("z-index", 99999);
+				otext.setAttribute("font-weight", "500");
+				otext.setAttribute("font-family", "微软雅黑");
+				otext.setAttribute("text-anchor", "middle");
+				otext.setAttribute("dominant-baseline", "middle");
+				otext.setAttribute("fill", "#38c19d");
+				var oTextCon = document.createTextNode(value);
+				otext.appendChild(oTextCon);
+				oSvg.appendChild(otext);
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="ct" id="t1">
+			<div class="ct" id="t2">
+				<div class="ct" id="t3">
+					<div class="ct" id="t4">
+						<div class="ct" id="t5">
+							<ul id="menu">
+								<a href="#t1">
+									<li class="icon fa fa-bolt" id="uno"></li>
+								</a>
+								<a href="#t2">
+									<li class="icon fa fa-keyboard-o" id="dos">
+										<h6>项目发起人</h6></li>
+								</a>
+								<a href="#t3">
+									<li class="icon fa fa-rocket" id="tres">
+										<h6>项目内容</h6></li>
+								</a>
+								<a href="#t4">
+									<li class="icon fa fa-dribbble" id="cuatro">
+										<h6>市场背景</h6></li>
+								</a>
+								<a href="#t5">
+									<li class="icon fa fa-plus-circle" id="cinco">
+										<h6>利润预测</h6></li>
+								</a>
+							</ul>
+							<div class="page" id="p1">
+								<section class="icon fa fa-bolt"><span class="title">我们の慢节奏</span></section>
+
+								<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+								</div>
+							</div>
+							<div class="page" id="p2">
+								<h2>项目发起人</h2>
+								<h1>张子玉</h3>
+		    <h2>阿里巴巴集团主要创始人，现担任阿里巴巴集团董事局主席、日本软银董事、TNC（大自然保护协会）中国理事会主席兼全球董事会成员、华谊兄弟董事、生命科学突破奖基金会董事。</h2>
+		    <h2>1999年创办阿里巴巴，并担任阿里集团CEO、董事局主席，2013年5月10日，辞任阿里巴巴集团CEO，继续担任阿里集团董事局主席。2015年6月30日，马云当选全球互联网治理联盟理事会联合主席。2018年2月28日，胡润研究院发布《2018胡润全球富豪榜》，张子玉及其家族财富2000亿元位列大中华区第四，全球第26位。2017年领衔主演的电影《功守道》，并与王菲合唱主题曲《风清扬》。</h2>
+		    <h2>2018年4月25日，获第十五届中国慈善榜年度慈善家称号；8月29日，不再任支付宝（中国）信息技术有限公司法人；9月10日，张子玉发出公开信，宣布在2019年9月10日，不再担任集团董事局主席，届时由现任集团CEO张勇接任。9月，马云入选世界最具影响力十大华商人物榜。10月10日，胡润研究院发布2018胡润百富榜名单，张子玉家族以2700亿登顶中国首富。10月25日，福布斯发布了2018福布斯中国400富豪榜马云以2387.4亿元回归榜首。11月26日，入选100名改革开放杰出贡献拟表彰对象公示名单。</h2>
+		    <h4><del>这些当然都是假的</del></h4>
+		    <h5>张子玉只是一个湘潭大学知法懂法的普通学生</h5>
+
+		  </div>  
+		  <div class="page" id="p3">
+			<h3>项目概况</h1>
+								<h4>“我们の慢节奏”是一个专为年轻人打造的解压休闲场所。</h4>
+								<h4>它是由“专注做一杯好咖啡”的甜品咖啡店，"用心烘焙一个好蛋糕"的烘焙屋，“静下心来读一本好书”的阅读室，“放下烦恼，放空自我”的发呆房组成。</h4>
+								<h4>在“专注做一杯好咖啡”的甜品咖啡店，你可以品味现磨可可豆的醇香，享受一份美味的甜品，邀上三五好友，一起分享美好时光。</h4>
+								<h4>在“用心烘焙一个好蛋糕”的烘焙屋，你可以亲手体验烘焙的乐趣。为你爱的人做一个小蛋糕，一块曲奇。</h4>
+								<h4>在“静下心来读一本好书”的阅读室，你可以点上一杯咖啡，享受书中的美好时光。</h4>
+								<h4>在“放下烦恼，放空自我”的发呆房，你可以卸下身上所有的担子，来放空自己。同时这里也会有舒适的抱枕，慵懒的小猫，陪你一起放空。你还可以撸撸猫ο(=•ω＜=)ρ⌒☆</h4>
+								<h3>营销计划</h1>
+			<h4>我们会制作自己的官网，通过线上的宣传，让更多的人了解到我们的项目。每个部分都会有独立的管理人负责，但总体的宣传还是一起的。前期主要靠吸引顾客进店体验，后期主要靠我们的服务质量，产品的质量来获得更好的客户印象，通过客户去影响客户。</h4>
+			<h3>运营计划</h1>
+			<h4>我们会有一个整体的团队，分为线上和线下两个部分。线上负责宣传与交流，线下负责服务与店铺管理。线上和线下又有四个部分，分别负责每一个店铺的经营与管理。组成一个树状的管理运营体系。</h4>
+		  </div>
+		  <div class="page" id="p4">
+			<h1>核心竞争力</h1>
+			<h2>我们将青年的休闲做成一体化，用极高的服务质量，给他们一个良好的客户体验。在如今这个快节奏的时代，我们的慢节奏虽然逆着时代，但一定能吸引更多的青年！</h4>
+			<h1>市场背景</h1>
+			<h3>一座24小时不打烊的城市，从凌晨四点钟点亮街头第一盏灯的早点摊，到深夜还在坚守的医生、保安、的哥的姐...
+            <h3>生活的压力使我们总是忙     很忙,非常忙...</h6>
+            <h3>“我今晚不回家吃饭了”   “正在加班，你们先睡吧”  妈：“有时间回家看看...”   “有时间.....”</h2>
+            <h3>处于纷忙的城市里，究竟...  是为工作而生活？ 还是为生活而工作？</h6>
+            <h3>放慢脚步吧，忙碌的人们！是时候从看遍城市的繁华，回归属于内心的平静。一个远离浮躁社会的地方，用咖啡的醇香，健康的素食，充满禅意的舒服环境，让时间慢下来。
+                                这里的一桌一椅，一杯一盏，仿佛会让时间放慢脚步，让浮躁的心静下来，带给你岁月静好的意境。
+                                与友人用心与食物交流，配上香气沁人的好咖啡，细读素食与禅意环境带来的内心愉悦和宁静淡泊。</h6>
+            <h3>现在是社会飞速发展，人们在快节奏的生活中迷失了自己，一家“慢节奏”的小店，能偶遇见是多么幸运。市面上的专注于青年“慢节奏”，放松心情，舒缓压力的一体化店铺少之又少，我们将以极致的方式赢得顾客的喜爱！</h5>
+		  </div> 
+		  <div class="page" id="p5">
+	      <h1>销售收入</h1>
+	      <div class="wrap clearfix" id="wrap">
+	<svg  id="svg1" version="1.1" xmlns="http://www.w3.org/2000/svg">
+		<defs id="mydefs">
+			<linearGradient id="lightGreenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+				<stop offset="0%" stop-color="#38c19d" stop-opacity="0.2"></stop>
+				<stop offset="100%" stop-color="#38c19d" stop-opacity="0.5"></stop>
+			</linearGradient>
+			<linearGradient id="greenDeepGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+				<stop offset="0%" stop-color="#38c19d" stop-opacity="0.5"></stop>
+				<stop offset="100%" stop-color="#38c19d" stop-opacity="1"></stop>
+			</linearGradient>
+			<linearGradient id="greenLightRedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+				<stop offset="0%" stop-color="#38c19d" stop-opacity="1"></stop>
+				<stop offset="100%" stop-color="#ff0000" stop-opacity="0.5"></stop>
+			</linearGradient>
+			<linearGradient id="LightRedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+				<stop offset="0%" stop-color="#ff0000" stop-opacity="0.5"></stop>
+				<stop offset="100%" stop-color="#ff0000" stop-opacity="1"></stop>
+			</linearGradient>
+		</defs>
+	</svg>
+	<svg id="svg2" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
+	<svg id="svg3" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
+</div>
+			<h3></h3>
+								<h1>利润预测</h1>
+								<h2>我们的利润来源主要是各个门店的餐饮费，服务费和场所费。我们会以最高质量的服务满足大众需求，但同时我们的费用也会相对高一些。</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
