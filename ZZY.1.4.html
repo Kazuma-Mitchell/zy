@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>慢吞吞的烘焙屋</title>
+		<link rel="stylesheet" href="css/style.4.css" type="text/css" />
+		<script type="text/javascript" src="js/jquery.min.1.js"></script>
+		<link rel="stylesheet" href="css/Cooldog.css">
+		<link rel="stylesheet" href="css/iconfont.css">
+		<link rel="stylesheet" href="css/demo.css">
+		<style>* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: white;
+	font-family: "Lato", sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+nav {
+	position: relative;
+	padding-bottom: 12px;
+}
+
+nav .line {
+	height: 2px;
+	position: absolute;
+	bottom: 0;
+	margin: 10px 0 0 0;
+	background: #FF1847;
+}
+
+nav ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: flex;
+}
+
+nav ul li {
+	margin: 0 40px 0 0;
+	opacity: 0.4;
+	transition: all 0.4s ease;
+}
+
+nav ul li:hover {
+	opacity: 0.7;
+}
+
+nav ul li.active {
+	opacity: 1;
+}
+
+nav ul li:last-child {
+	margin-right: 0;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: black;
+	text-transform: uppercase;
+	display: block;
+	font-weight: 600;
+	letter-spacing: 0.2em;
+	font-size: 14px;
+}
+p:hover{
+	color: #FD6E6E;
+}
+dd:hover{
+	color: #FD6E6E;
+}
+#li1{
+	background-color: #F8E0E0;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 50vh;
+}
+
+.box1 {
+	position: fixed;
+	top: 60px;
+}
+
+.box5 {
+	position: absolute;
+	top: 1850px;
+}
+
+li {
+	width: 100px;
+}
+
+.img1 {
+	position: absolute;
+	left: 0;
+	top: -62px;
+}
+
+.kongbai {
+	width: 1px;
+	height: 120px;
+	visibility: hidden;
+}
+
+.img2 {
+	position: absolute;
+	top: 450px;
+}
+
+.box3 {
+	position: absolute;
+	top: 620px;
+	left: 150px;
+}
+.box4{
+	position: absolute;
+	top: 950px;
+	left: 80px;
+}	
+.img3{
+	position: absolute;
+	top: 840px;
+}	
+.img4{
+	position: absolute;
+	top: 700px;
+	left: -80px;
+}
+.hide{
+ background-color: #FD6E6E;
+}
+		</style>
+	</head>
+
+	<body>
+		<div class="kongbai"></div>
+		<div class="box1">
+			
+			<img class="img1" src="img/0007019910319754_b.jpg" width="100px" height="100px" />
+			<nav>
+				<ul>
+					<li> </li>
+					<li> </li>
+					<li> </li>
+					<li> </li>
+					<li> </li>
+					<li class="active">
+						<a href="#故事">品牌故事</a>
+					</li>
+					<li>
+						<a href="#历程">发展历程</a>
+					</li>
+					<li>
+						<a href="#推荐">爆款推荐</a>
+					</li>
+				</ul>
+			</nav>
+
+			<script>var nav = $('nav');
+var line = $('<div />').addClass('line');
+
+line.appendTo(nav);
+
+var active = nav.find('.active');
+var pos = 0;
+var wid = 0;
+
+if(active.length) {
+	pos = active.position().left;
+	wid = active.width();
+	line.css({
+		left: pos,
+		width: wid
+	});
+}
+
+nav.find('ul li a').click(function(e) {
+	if(!$(this).parent().hasClass('active')) {
+		e.preventDefault();
+
+		var _this = $(this);
+
+		nav.find('ul li').removeClass('active');
+
+		var position = _this.parent().position();
+		var width = _this.parent().width();
+
+		if(position.left >= pos) {
+			line.animate({
+				width: ((position.left - pos) + width)
+			}, 300, function() {
+				line.animate({
+					width: width,
+					left: position.left
+				}, 150);
+				_this.parent().addClass('active');
+			});
+		} else {
+			line.animate({
+				left: position.left,
+				width: ((pos - position.left) + wid)
+			}, 300, function() {
+				line.animate({
+					width: width
+				}, 150);
+				_this.parent().addClass('active');
+			});
+		}
+
+		pos = position.left;
+		wid = width;
+	}
+});</script>
+			<hr />
+		</div>
+		<script src="/demos/googlegg.js"></script>
+        <div class="box2">
+		<div class="Cooldog_container">
+			<div class="Cooldog_content">
+				<ul>
+					<li class="p1">
+						<a href="#">
+							<img src="img/TB2Nwwsgx6I8KJjSszfXXaZVXXa_!!2302075176.jpg" alt="">
+						</a>
+					</li>
+					<li class="p2">
+						<a href="#">
+							<img src="img/TB2Ui39rdBopuFjSZPcXXc9EpXa_!!2302075176.jpg" alt="">
+						</a>
+					</li>
+					<li class="p3">
+						<a href="#">
+							<img src="img/pc6.jpg" alt="">
+						</a>
+					</li>
+					<li class="p4">
+						<a href="#">
+							<img src=" img/pc5.jpg" alt="">
+						</a>
+					</li>
+					<li class="p5">
+						<a href="#">
+							<img src=" img/pc4.jpg" alt="">
+						</a>
+					</li>
+				</ul>
+			</div>
+			<a href="javascript:;" class="btn_left">
+				<i class="iconfont icon-zuoyoujiantou"></i>
+			</a>
+			<a href="javascript:;" class="btn_right">
+				<i class="iconfont icon-zuoyoujiantou-copy-copy"></i>
+			</a>
+			<a href="javascript:;" class="btn_close">
+				<i class="iconfont icon-icon-test"></i>
+			</a>
+			<div class="buttons clearfix">
+				<a href="javascript:;" class="color"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.1.js"></script>
+		<script type="text/javascript" src="js/Cooldog.js"></script>
+		</div>
+        <img  class="img2" src="img/QQ图片20181203215053.png" width="100%" height="150px" />
+        <div  class="box3">
+        <font color="#666666" size="5">
+        	<p id="故事" >尝在口中甜在心里</p>
+<p>专注健康我们秉承无添加原生态的健康烘焙理念</p>
+<p>采用传统结合现代的烘焙工艺</p>
+<p>坚持用最天然、最原始、最简单的原材料来制作高品质的新一代健康烘焙食品</p>
+<p>用心烘焙</p>
+<p>用“心"制作每一份甜蜜</p>
+<p>品味甜蜜生活，感受幸福味道</p>
+<p>心得烘焙的蛋糕、用心烘焙的蛋糕</p>
+<p>做最健康、最放心的食品</p>
+<p>我们始终把健康、营养放第一位坚持用最简单最原生态的食材搭配</p>
+<p>传统的手工技艺来制造美味的烘焙食品</p>
+<p>希望能带给您不一样的烘焙食品，真诚期待您的品尝为爱人送上一份甜蜜吧为亲人送上一份温暖吧为朋友送上一份惊喜吧为孩子送上一份喜悦吧</p>
+<p>水果的芬芳先侵袭你的鼻腔，纯滑扎实的奶油与浓郁稠密的巧克力前后夹击你的味蕾，酥皮与蛋糕揉碎了最后一道防线,夹层中媚红的果酱俘虏了你的感官,接踵而至的回味激荡着灵魂,至死方休。</p> 
+        </font>
+        </div>
+        <img  class="img3" src="img/QQ图片20181203215220.png" width="100%" height="150px">
+        <div  class="box4">
+        	<script src="/demos/googlegg.js"></script>
+
+<div class="wrapper">
+	<ul>
+		<li>
+			<div class='picBox'>
+				<div class='show'>
+					<img height='180px' width='180px' src='img/a猫山王榴莲千层蛋糕.jpg'></img>
+				</div>
+				<div class='hide'>
+					<h3 id="历程" >
+						猫山王榴莲千层蛋糕
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='show'>
+					<img height='180px' width='180px' src='img/a双黄白莲蓉月饼.jpg'></img>
+				</div>
+				<div class='hide'>
+					<h3>
+					  双黄白莲蓉月饼
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='show'>
+					<img height='180px' width='180px' src='img/a椰奶千层蛋糕.jpg'></img>
+				</div>
+				<div class='hide'>
+					<h3>
+					  椰奶千层蛋糕
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='show'>
+					<img height='180px' width='180px' src='img/a巧克力流心月饼.png'></img>
+				</div>
+				<div class='hide'>
+					<h3>
+						巧克力流心月饼
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='show'>
+					<img height='180px' width='180px' src='img/a榴莲铜锣烧.jpg'></img>
+				</div>
+				<div class='hide'>
+					<h3>
+						榴莲铜锣烧
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='show'>
+					<img height='180px' width='180px' src='img/蓝莓芒果千层蛋糕.jpg'></img>
+				</div>
+				<div class='hide'>
+					<h3>
+						蓝莓芒果千层蛋糕
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='show'>
+					<img height='180px' width='180px' src='img/a端午冰粽.jpg'></img>
+				</div>
+				<div class='hide'>
+					<h3>
+						端午冰粽
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='show'>
+					<img height='180px' width='180px' src='img/榛子巧克力千层蛋糕.jpg'></img>
+				</div>
+				<div class='hide'>
+					<h3>
+					  榛子巧克力千层蛋糕
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='show'>
+					<img height='180px' width='180px' src='img/椰果千层蛋糕.jpg'></image>
+				</div>
+				<div class='hide'>
+					<h3>
+						椰果千层蛋糕
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='show'>
+					<img height='180px' width='180px' src='img/a紫薯酥.jpg'></img>
+				</div>
+				<div class='hide'>
+					<h3>
+						紫薯酥
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='show'>
+					<img height='180px' width='180px' src='img/a脏脏包.jpg'></img>
+				</div>
+				<div class='hide'>
+					<h3>
+						脏脏包
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='show'>
+					<img height='180px' width='180px' src='img/a芒果奶酪包.jpg'></img>
+				</div>
+				<div class='hide'>
+					<h3>
+						Picture12
+					</h3>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+<img  class="img4" src="img/QQ图片20181204002525.png" width="100%" height="200px">
+<script src="js/jquery.min.2.js"></script>
+<script src="js/demo.js"></script>
+        </div>
+		<div  class="box5">
+			<div class="bodyCon08">
+				<div class="students">
+
+					<div id="four_flash">
+						<div  class="flashBg">
+							<ul id="ul1" class="mobile">
+								<li id="li1">
+									<img src="img/桔子酸奶千层蛋糕.jpg" />
+									<dd id="推荐" >桔子酸奶千层蛋糕</dd>
+									<p>桔子和酸奶的搭配(●ˇ∀ˇ●)</p>
+									<a href=""></a>
+								</li>
+								<li id="li1">
+									<img src="img/彩虹千层.jpg" />
+									<dd>彩虹千层蛋糕</dd>
+									<p>摆拍利器，颜值巨高(/ω＼*)……… (/ω•＼*)</p>
+									<a href=""></a>
+								</li>
+								<li id="li1">
+									<img src="img/榴莲芒果千层蛋糕.jpg" />
+									<dd>榴莲芒果千层蛋糕</dd>
+									<p>经典千层蛋糕，百吃不腻(～﹃～)~</p>
+									<a href=""></a>
+								</li>
+								<li id="li1">
+									<img src="img/草莓千层蛋糕.jpg" />
+									<dd>草莓千层蛋糕</dd>
+									<p>粉色系超级少女心的千层蛋糕(✿◕‿◕✿)</p>
+									<a href=""></a>
+								</li>
+								<li id="li1">
+									<img src="img/抹茶奥利奥千层蛋糕.jpg" />
+									<dd>抹茶奥利奥千层蛋糕</dd>
+									<p>抹茶控的最爱(❤ ω ❤)</p>
+									<a href=""></a>
+								</li>
+								<li id="li1">
+									<img src="img/网红毛巾卷.jpg" />
+									<dd>网红毛巾卷</dd>
+									<p>像毛巾的蛋糕ε=ε=ε=(~￣▽￣)~</p>
+									<a href=""></a>
+								</li>
+
+							</ul>
+						</div>
+						<div class="but_left"><img src="images/qianxleft.png" /></div>
+						<div class="but_right"><img src="images/qianxr.png" /></div>
+					</div>
+
+				</div>
+			</div>
+
+			<script type="text/javascript" src="js/jquery.js"></script>
+			<script type="text/javascript">//学员
+var _index5 = 0;
+$("#four_flash .but_right img").click(function() {
+	_index5++;
+	var len = $(".flashBg ul.mobile li").length;
+	if(_index5 + 5 > len) {
+		$("#four_flash .flashBg ul.mobile").stop().append($("ul.mobile").html());
+	}
+	$("#four_flash .flashBg ul.mobile").stop().animate({
+		left: -_index5 * 326
+	}, 1000);
+});
+
+$("#four_flash .but_left img").click(function() {
+	if(_index5 == 0) {
+		$("ul.mobile").prepend($("ul.mobile").html());
+		$("ul.mobile").css("left", "-1380px");
+		_index5 = 6
+	}
+	_index5--;
+	$("#four_flash .flashBg ul.mobile").stop().animate({
+		left: -_index5 * 326
+	}, 1000);
+});</script>
+		</div>
+		</div>
+	</body>
+
+</html>

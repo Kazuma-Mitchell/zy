@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>慢吞吞官网</title>
+		<meta name=viewport content="width=device-width,initial-scale=1,user-scalable=no">
+		<meta http-equiv=X-UA-Compatible content="IE=Edge,chrome=1">
+		<link rel=stylesheet href="css/common.css">
+		<link rel=stylesheet href="css/jdc-side-panel.css">
+		<link rel="stylesheet" type="text/css" href="css/default.css">
+		<link rel="stylesheet" type="text/css" href="css/search-form.css">
+		<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			function searchToggle(obj, evt) {
+				var container = $(obj).closest('.search-wrapper');
+
+				if(!container.hasClass('active')) {
+					container.addClass('active');
+					evt.preventDefault();
+				} else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0) {
+					container.removeClass('active');
+					container.find('.search-input').val('');
+					container.find('.result-container').fadeOut(100, function() {
+						$(this).empty();
+					});
+				}
+			}
+
+			function submitFn(obj, evt) {
+				value = $(obj).find('.search-input').val().trim();
+
+				_html = "Yup yup! Your search text sounds like this: ";
+				if(!value.length) {
+					_html = "Yup yup! Add some text friend :D";
+				} else {
+					_html += "<b>" + value + "</b>";
+				}
+
+				$(obj).find('.result-container').html('<span>' + _html + '</span>');
+				$(obj).find('.result-container').fadeIn(100);
+
+				evt.preventDefault();
+			}
+		</script>
+		<style>
+			.box1 {
+				width: 100%;
+				height: 120px;
+				margin: 0 0 100px 0;
+			}
+			
+			.box1-1 {
+				width: 240px;
+				height: 100px;
+				display: inline-block;
+			}
+			
+			.box1-2 {
+				width: 600px;
+				height: 100px;
+				display: inline-block;
+			}
+			
+			.box1-3 {
+				width: 300px;
+				height: 100px;
+				display: inline-block;
+			}
+			
+			#shulan {
+				display: inline;
+				position: absolute;
+				left: 20px;
+				top: 15px;
+			}
+			
+			#mantuntun {
+				display: inline;
+				position: absolute;
+				left: 102px;
+				top: 25px;
+			}
+			
+			.search-wrapper {
+				position: absolute;
+				top: 70px;
+				left: 600px;
+			}
+			
+			.box1-3-1 {
+				width: 75px;
+				height: 100px;
+				position: absolute;
+				top: 25px;
+				left: 1050px;
+			}
+			
+			.box1-3-2 {
+				width: 75px;
+				height: 100px;
+				position: absolute;
+				top: 25px;
+				left: 1100px;
+			}
+			
+			.box1-3-3 {
+				width: 75px;
+				height: 100px;
+				position: absolute;
+				top: 25px;
+				left: 1150px;
+			}
+			
+			.box1-3-4 {
+				width: 75px;
+				height: 100px;
+				position: absolute;
+				top: 25px;
+				left: 1200px;
+			}
+			
+			.ul1 {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				position: relative;
+			}
+			
+			.ul1 li:nth-child(1) {
+				position: absolute;
+				left: 0;
+				top: 25px;
+			}
+			
+			.ul1 li:nth-child(2) {
+				position: absolute;
+				left: 0;
+				top: 25px;
+				display: none;
+			}
+			
+			.ul1:hover li:nth-child(2) {
+				display: block;
+			}
+			
+			.ul1 li:nth-child(3) {
+				position: absolute;
+				left: 0;
+				top: 25px;
+			}
+			
+			.ul1 li:nth-child(4) {
+				position: absolute;
+				left: 0;
+				top: 25px;
+				display: none;
+			}
+			
+			.ul1:hover li:nth-child(4) {
+				display: block;
+			}
+			
+			.ul1 li:nth-child(5) {
+				position: absolute;
+				left: 0;
+				top: 25px;
+			}
+			
+			.ul1 li:nth-child(6) {
+				position: absolute;
+				left: 0;
+				top: 25px;
+				display: none;
+			}
+			
+			.ul1:hover li:nth-child(6) {
+				display: block;
+			}
+			
+			.ul1 li:nth-child(7) {
+				position: absolute;
+				left: 0;
+				top: 25px;
+			}
+			
+			.ul1 li:nth-child(8) {
+				position: absolute;
+				left: 0;
+				top: 25px;
+				display: none;
+			}
+			
+			.ul1:hover li:nth-child(8) {
+				display: block;
+			}
+			
+			.box2 {
+				width: 100%;
+				height: 500px;
+			}
+			
+			.box3 {
+				width: 100%;
+				height: 700px;
+				margin: 50px 0 0 0;
+			}
+			
+			.p1 {
+				position: absolute;
+				left: 25px;
+				top: 150px;
+			}
+			
+			.p2 {
+				position: absolute;
+				left: 25px;
+				top: 700px;
+			}
+			
+			.p3 {
+				position: absolute;
+				left: 25px;
+				top: 1400px;
+			}
+			
+			.box4 {
+				width: 100%;
+				height: 450px;
+			}
+			
+			.box4-1 {
+				width: 400px;
+				height: 450px;
+				margin: 24px 5px 0 20px;
+				float: left;
+			}
+			
+			.box4-2 {
+				width: 400px;
+				height: 450px;
+				margin: 24px 5px 0;
+				float: left;
+			}
+			
+			.box4-3 {
+				width: 400px;
+				height: 450px;
+				margin: 24px 5px 0;
+				display: inline-block;
+			}
+			
+			.p3-1 {
+				position: absolute;
+				left: 27px;
+				top: 1485px;
+			}
+			
+			.img1 {
+				position: absolute;
+				left: 17px;
+				top: 1490px;
+			}
+			
+			.p3-2 {
+				position: absolute;
+				left: 435px;
+				top: 1485px;
+			}
+			
+			.img2 {
+				position: absolute;
+				left: 424px;
+				top: 1490px;
+			}
+			
+			.p3-3 {
+				position: absolute;
+				left: 8px;
+				top: -3px;
+			}
+			
+			.box4-4 {
+				width: 590px;
+				margin: 10px 10px 0 20px;
+				height: 350px;
+				display: inline-block;
+				padding: 0 0 0 100px;
+			}
+			
+			.box4-5 {
+				width: 590px;
+				margin: 10px 20px 0 10px;
+				height: 350px;
+				display: inline-block;
+				position: absolute;
+			}
+			.box5{
+				width: 1220px;
+				margin: 20px;
+				padding: 50px 0 0 120px;
+				height: 500px;
+			}
+			canvas {
+				display: block;
+			}
+			.mao{
+				width: 360px;
+				height: 360px;
+			}
+			.p4{
+			 position: absolute;
+			 left: 25px;
+			 height: 2100px;
+			}
+			.img4{
+				position: absolute;
+				left: 15px;
+				top: 2430px;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/jquery.slider.css" />
+		<script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/jquery.slider.min.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+					$(".slider").slideshow({
+						width: 722,
+						height: 267,
+						transition: ['bar', 'Rain', 'square', 'squareRandom', 'explode']
+					});
+				}
+
+			);
+		</script>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="dist/css/custom.css">
+
+		<link rel="stylesheet" href="dist/css/bpHS.min.css">
+		<link href='css/lanren.css' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="hover.css">
+	</head>
+
+	<body>
+		<div class="box1">
+			<div class="box1-1">
+				<img id="shulan" src="img/啊是大.jpg" width="100px" height="100px" />
+				<font color="#B0D5D6" face="微软雅黑" size="5">
+					<h1 id="mantuntun">慢吞吞</h1></font>
+			</div>
+			<div class="box1-2">
+				<form onsubmit="submitFn(this, event);">
+					<div class="search-wrapper">
+						<div class="input-holder">
+							<input type="text" class="search-input" placeholder="Type to search" />
+							<button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+						</div>
+						<span class="close" onclick="searchToggle(this, event);"></span>
+						<div class="result-container">
+
+						</div>
+					</div>
+				</form>
+			</div>
+			<audio src="music/Yael Nam - New Soul.mp3"  loop="loop" autoplay="autoplay" ></audio>
+			<div class="box1-3">
+				<div class="box1-3-1">
+					<ul class="ul1">
+						<li><img src="img/66J58PICFAx (4).jpg" width="40px" height="40px" </li>
+							<li><img src="img/66J58PICFAx (3).jpg" width="40px" height="40px" </li>
+					</ul>
+				</div>
+				<div class="box1-3-2">
+					<ul class="ul1">
+						<li><img src="img/66J58PICFAx (11).jpg" width="40px" height="40px" </li>
+							<li><img src="img/66J58PICFAx (2).jpg" width="40px" height="40px" </li>
+					</ul>
+				</div>
+				<div class="box1-3-3">
+					<ul class="ul1">
+						<li><img src="img/66J58PICFAx (13).jpg" width="40px" height="40px" </li>
+							<li><img src="img/66J58PICFAx (12).jpg" width="40px" height="40px" </li>
+					</ul>
+				</div>
+				<div class="box1-3-4">
+					<ul class="ul1">
+						<li><img src="img/66J58PICFAx (14).jpg" width="40px" height="40px" </li>
+							<li><img src="img/66J58PICFAx (15).jpg" width="40px" height="40px" </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		</div>
+		<font class="p1" color="#2FA0EC" face="微软雅黑" size="7">小店实景</font>
+		<img src="img/QQ图片20181101103810.png" width="1100px" height="10px" />
+		<div class="box2">
+			<script src="/demos/googlegg.js"></script>
+			<br>
+			<div class="container">
+				<div class="bp-hs" id="demo-default">
+					<div class="bp-hs_inner">
+						<div class="bp-hs_inner__item" data-transform="scale">
+							<img src="img/期末考试img-2de46aec9468dddc3707824d461a37ec.jpg" width="1200px" height="400px" alt="Boompx Hero Slider 01" />
+						</div>
+						<div class="bp-hs_inner__item" data-transform="rotate" data-origin="top-left">
+							<img src="img/期末考试img-80b87a3178e77e6ccf2b189a43d8140b.jpg" width="1200px" height="400px" alt="Boompx Hero Slider 02" />
+						</div>
+						<div class="bp-hs_inner__item" data-transform="rotate" data-origin="bottom-left">
+							<img src="img/期末考试IMG_20181201_104428.jpg" width="1200px" height="400px" alt="Boompx Hero Slider 03" />
+						</div>
+						<div class="bp-hs_inner__item">
+							<img src="img/期末考试IMG_20181201_104511.jpg" width="1200px" height="400px" alt="Boompx Hero Slider 04" />
+						</div>
+					</div>
+				</div>
+
+				<script src="http://code.jquery.com/jquery.min.js"></script>
+				<script src="dist/js/vendors/jquery.touchSwipe.min.js"></script>
+				<script src="dist/js/bpHS.min.js"></script>
+				<script src="dist/js/custom.js"></script>
+			</div>
+			<font class="p2" color="#2FA0EC" face="微软雅黑" size="7">小店分支</font>
+			<div class="box3">
+				<img src="img/QQ图片20181101103810.png" width="1100px" height="10px" />
+				<div id="test-element"></div>
+				<script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>
+				<script src="js/feature.presenter.1.5.min.js"></script>
+				<script>
+					var settings = [{
+							image: 'img/啊是大.jpg',
+							heading: '慢吞吞',
+							description: '一家"慢节奏"的小店'
+						},
+						{
+							image: 'img/timgX7R34SUY.jpg',
+							heading: '甜品咖啡店',
+							description: '专注做一杯好咖啡'
+						},
+						{
+							image: 'img/timgVOQ72FYH.jpg',
+							heading: '烘焙屋',
+							description: '用心烘焙一个好蛋糕'
+						},
+						{
+							image: 'img/timg915K0EUY.jpg',
+							heading: '阅读室',
+							description: '静下心来读一本好书'
+						},
+						{
+							image: 'img/timg.jpg',
+							heading: '发呆房',
+							description: '放下烦恼，放空自我'
+						},
+						{
+							image: 'img/timg5SIEFJUW.jpg',
+							heading: '目录',
+							description: ''
+						}
+					];
+					var options = {
+						circle_radius: 220,
+						normal_feature_size: 100,
+						highlighted_feature_size: 150,
+						top_margin: 100,
+						bottom_margin: 50,
+						spacing: 40,
+						min_padding: 50,
+						heading_font_size: 30,
+						description_font_size: 20,
+						type: 'image'
+					};
+					var fp = new FeaturePresenter($("#test-element"), settings, options);
+					fp.createPresenter();
+				</script>
+			</div>
+			<font class="p3" color="#2FA0EC" face="微软雅黑" size="7">小店介绍</font>
+			<div class="box4">
+				<img src="img/QQ图片20181101103810.png" width="1100px" height="10px" />
+				<div class="box4-1">
+					<img class="img1" src="img/QQ图片20181202162943.png" width="3px" height="17px">
+					<font class="p3-1" color="#2FA0EC" face="微软雅黑" size="4">小店起源</font>
+					<h4>一座24小时不打烊的城市，从凌晨四点钟点亮街头第一盏灯的早点摊，到深夜还在坚守的医生、保安、的哥的姐...
+            <h4>生活的压力使我们总是忙     很忙,非常忙...</h6>
+            <h4>“我今晚不回家吃饭了”   “正在加班，你们先睡吧”  妈：“有时间回家看看...”   “有时间.....”</h2>
+            <h4>处于纷忙的城市里，究竟...  是为工作而生活？ 还是为生活而工作？</h6>
+            <h4>放慢脚步吧，忙碌的人们！是时候从看遍城市的繁华，回归属于内心的平静。一个远离浮躁社会的地方，用咖啡的醇香，健康的素食，充满禅意的舒服环境，让时间慢下来。
+                                这里的一桌一椅，一杯一盏，仿佛会让时间放慢脚步，让浮躁的心静下来，带给你岁月静好的意境。
+                                与友人用心与食物交流，配上香气沁人的好咖啡，细读素食与禅意环境带来的内心愉悦和宁静淡泊。</h6>
+            <h4>现在是社会飞速发展，人们在快节奏的生活中迷失了自己，一家“慢节奏”的小店，能偶遇见是多么幸运。</h6>
+					
+				</div>
+				<div class="box4-2">
+					<img class="img2"  src="img/QQ图片20181202162943.png" width="3px" height="17px"><font class="p3-2" color="#2FA0EC" face="微软雅黑" size="4">发起人</font>
+					<h2>马云</h3>
+		    <h4>阿里巴巴集团主要创始人，现担任阿里巴巴集团董事局主席、日本软银董事、TNC（大自然保护协会）中国理事会主席兼全球董事会成员、华谊兄弟董事、生命科学突破奖基金会董事。</h2>
+		    <h4>1999年创办阿里巴巴，并担任阿里集团CEO、董事局主席，2013年5月10日，辞任阿里巴巴集团CEO，继续担任阿里集团董事局主席。2015年6月30日，马云当选全球互联网治理联盟理事会联合主席。2018年2月28日，胡润研究院发布《2018胡润全球富豪榜》，马云及其家族财富2000亿元位列大中华区第四，全球第26位。2017年领衔主演的电影《功守道》，并与王菲合唱主题曲《风清扬》。</h2>
+		    <h4>2018年4月25日，获第十五届中国慈善榜年度慈善家称号；8月29日，不再任支付宝（中国）信息技术有限公司法人；9月10日，马云发出公开信，宣布在2019年9月10日，不再担任集团董事局主席，届时由现任集团CEO张勇接任。</h2>
+				</div>
+				<div class="box4-3">
+				<img src="img/啊是大阿萨.jpg" width="400px" height="250px"/>
+			<h4>9月，马云入选世界最具影响力十大华商人物榜。10月10日，胡润研究院发布2018胡润百富榜名单，张子玉家族以2700亿登顶中国首富。10月25日，福布斯发布了2018福布斯中国400富豪榜马云以2387.4亿元回归榜首。11月26日，入选100名改革开放杰出贡献拟表彰对象公示名单。</h4>
+					<h4>2018年开始投资“慢吞吞”小店。</h4>
+				</div>
+				<hr />
+				<div class="box4-4">
+				<img class="mao" src="img/QQ图片20181202215446.png"  />
+				</div>
+				<div class="box4-5">
+					<img class="img3" src="img/QQ图片20181202162943.png" width="3px" height="17px">
+					<font class="p3-3" color="#2FA0EC" face="微软雅黑" size="4">小店内容</font>
+					<h4>“我们の慢节奏”是一个专为年轻人打造的解压休闲场所。</h4>
+					<h4>它是由“专注做一杯好咖啡”的甜品咖啡店，"用心烘焙一个好蛋糕"的烘焙屋，“静下心来读一本好书”的阅读室，“放下烦恼，放空自我”的发呆房组成。</h4>
+					<h4>在“专注做一杯好咖啡”的甜品咖啡店，你可以品味现磨可可豆的醇香，享受一份美味的甜品，邀上三五好友，一起分享美好时光。</h4>
+					<h4>在“用心烘焙一个好蛋糕”的烘焙屋，你可以亲手体验烘焙的乐趣。为你爱的人做一个小蛋糕，一块曲奇。</h4>
+					<h4>在“静下心来读一本好书”的阅读室，你可以点上一杯咖啡，享受书中的美好时光。</h4>
+					<h4>在“放下烦恼，放空自我”的发呆房，你可以卸下身上所有的担子，来放空自己。同时这里也会有舒适的抱枕，慵懒的小猫，陪你一起放空。你还可以撸撸猫ο(=•ω＜=)ρ⌒☆</h4>
+				</div>
+				<div><font class="p4" color="#2FA0EC" face="微软雅黑" size="7">小店页面</font></div>
+				<img class="img4" src="img/QQ图片20181101103810.png" width="1000px" height="10px" />
+				<div class="box5">
+					
+					<script src="/demos/googlegg.js"></script>
+
+					<div class="wrap">
+
+						<a href="ZZY.1.3.html" target="_blank"><div class="tile">
+							<div class="text">
+								<h1>甜品咖啡店</h1>
+								<img src="img/咖啡厅.jpg">
+								<h2 class="animate-text">专注做一杯好咖啡</h2>
+								<p class="animate-text">午后时光，走进街角的一家咖啡屋，我喜欢坐在一个靠窗的位置。透过清晰透明的落地窗，你可以慵懒地看着街道上过往匆匆的人们，却不被嘈杂的喧嚣声所围绕，取而代之的是优雅缓慢的轻音乐。 </p>
+								<div class="dots"> <span></span> <span></span> <span></span> </div>
+							</div>
+						</div></a>
+
+						<a href="ZZY.1.5.html" target="_blank"><div class="tile">
+							<div class="text">
+								<h1>阅读室</h1>
+								<img src="img/书店.jpg">
+								<h2 class="animate-text">静下心来读一本好书</h2>
+								<p class="animate-text">书店里静的只有售货员笑谈的风声，一本本或立或卧的书籍，孤独的回忆着阅读者的数量、神态书里的文字是对读者的交心我们盼着，等待着，相伴人生的知音，书又何尝不是?</p>
+								<div class="dots"> <span></span> <span></span> <span></span> </div>
+							</div>
+						</div></a>
+
+						<a href="ZZY.1.4.html" target="_blank"><div class="tile">
+							<div class="text">
+								<h1>烘焙屋</h1>
+								<img src="img/烘焙店.jpg">
+								<h2 class="animate-text">用心做一个好蛋糕</h2>
+								<p class="animate-text">用叉子轻轻挖下一块带着草莓酱的慕斯蛋糕，入口、便化了。滑滑的鲜奶油，浓郁奶酪味的蛋糕底，唇齿间留存的清香甜腻气息、久久回味无穷。 </p>
+								<div class="dots"> <span></span> <span></span> <span></span> </div>
+							</div>
+						</div></a>
+
+						<a href="ZZY1.6.html" target="_blank"><div class="tile">
+							<div class="text">
+								<h1>发呆房</h1>
+								<img src="img/发呆.jpg">
+								<h2 class="animate-text">放下烦恼，放空自我</h2>
+								<p class="animate-text">享受着午日温暖的阳光，和猫猫一起慵懒的发呆吧！ο(=•ω＜=)ρ⌒☆ </p>
+								<div class="dots"> <span></span> <span></span> <span></span> </div>
+							</div>
+						</div></a>
+
+					</div>
+				</div>
+			</div>
+			<script src="/demos/googlegg.js"></script>
+
+			<div class="jdc-side" style="display: block;">
+				<div class="mod_hang_qrcode jdc_feedback_qrcode">
+					<div class="mod_hang_qrcode_btn"><i class="jdcfont"></i><span>扫码反馈</span></div>
+					<div class="mod_hang_qrcode_show">
+						<div class="mod-qr-tips"></div>
+						<div class="mod_hang_qrcode_show_bg">
+							<div id="canvas" style="height: 123px; width: 123px;"><img src="images/qr_img.png"></div>
+						</div>
+						<p>扫一扫，反馈当前页面</p>
+					</div>
+				</div>
+				<div class="mod_hang_appeal">
+					<div class="mod_hang_appeal_btn"><i class="jdcfont"></i> <span>咨询反馈</span></div>
+					<div class="mod_hang_appeal_show">
+						<ul>
+							<li>
+								<a href="http://kf.qq.com/" target="_blank">
+									<div class="icon_box"><i class="jdcfont"></i></div>
+									<div class="text_box">
+										<h5>人工客服</h5>
+										<p>7*12 专业客服，服务咨询</p>
+									</div>
+								</a>
+							</li>
+							<li id="entry">
+								<a href="http://www.ewei.com/" target="_blank" class="f-cb">
+									<div class="icon_box"><i class="jdcfont"></i></div>
+									<div class="text_box">
+										<h5>工单服务</h5>
+										<p>7*24全时处理，技术支持</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="http://www.12315.cn/cuser/portal/tscase/notice" target="_blank" class="f-cb">
+									<div class="icon_box"><i class="jdcfont"></i></div>
+									<div class="text_box">
+										<h5>投诉建议</h5>
+										<p>倾耳聆听，一个工作日内及时处理</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mod_hang_qrcode jdc_hang_qrcode">
+					<a class="mod_hang_qrcode_btn"><i class="jdcfont"></i><span>扫码关注</span></a>
+					<div class="mod_hang_qrcode_show">
+						<div class="mod_hang_qrcode_show_bg"></div>
+						<p>微信公众号</p>
+					</div>
+				</div>
+				<div class="mod_hang_qrcode mod_hang_top">
+					<a href="#" class="mod_hang_qrcode_btn"><i class="jdcfont"></i><span>返回顶部</span></a>
+				</div>
+				<div class="el-dialog__wrapper" style="display: none;">
+					<div class="el-dialog el-dialog--small" style="top: 15%;">
+						<div class="el-dialog__header"><span class="el-dialog__title"></span>
+							<div type="button" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></div>
+						</div>
+					</div>
+				</div>
+	</body>
+
+</html>
