@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>慢吞吞的甜品咖啡店</title>
+		<style type="text/css">
+			html,
+			body,
+			div {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.slider-outer {
+				width: 560px;
+				height: 300px;
+				margin: 150px auto;
+				background-color: #f60;
+				position: relative;
+			}
+			
+			.img-item {
+				position: absolute;
+				width: 112px;
+				height: 100%;
+				background-color: #f10;
+				transition: all 1.5s;
+				/*设置子元素在3D空间中呈现*/
+				transform-style: preserve-3d;
+			}
+			/*让图片可以构成一个有四个面的长方体 start*/
+			
+			.img {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				background-size: cover;
+			}
+			
+			.img:nth-child(1) {
+				background: url(img/期末考试IMG_20181201_104428.jpg) no-repeat;
+				transform: rotateX(0deg) translateZ(150px);
+			}
+			
+			.img:nth-child(2) {
+				background: url(img/期末考试img-14bcf54a0e6d7ee91ca9ea89e2184ef7.jpg) no-repeat;
+				transform: rotateX(-90deg) translateZ(150px);
+			}
+			
+			.img:nth-child(3) {
+				background: url(img/期末考试img-b2e7e3bff16a0a69d4268f0695bc39ef.jpg) no-repeat;
+				transform: rotateX(-180deg) translateZ(150px);
+			}
+			
+			.img:nth-child(4) {
+				background: url(img/期末考试img-75e4d4a90fbff6ce0ce32f98bb3c0cf3.jpg) no-repeat;
+				transform: rotateX(-270deg) translateZ(150px);
+			}
+			
+			.btns {
+				position: absolute;
+				top: 50%;
+				width: 100%;
+				height: 70px;
+				margin-top: -35px;
+			}
+			
+			.prev,
+			.next {
+				width: 70px;
+				height: 70px;
+				line-height: 70px;
+				text-align: center;
+				background-color: rgba(0, 0, 0, .3);
+				color: #fff;
+				font-size: 30px;
+				cursor: pointer;
+				position: absolute;
+			}
+			
+			.prev {
+				left: 0;
+			}
+			
+			.next {
+				right: 0;
+			}
+		</style>
+
+		<script src="jquery-1.11.3.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var num = 0;
+				$("#j_silder_outer .img-item").each(function(index, el) {
+					$(this).css({
+						"left": $(this).width() * index + "px",
+						/*让每个img-item延时一定时间执行动画*/
+						"transitionDelay": index * 0.3 + "s"
+					});
+					$(this).find(".img").css({
+						"backgroundPosition": -$(this).width() * index + "px"
+					});;
+				});
+
+				$(".prev").on("click", function() {
+					$("#j_silder_outer .img-item").css("transform", "rotateX(" + (++num * 90) + "deg)");
+				});
+
+				$(".next").on("click", function() {
+					$("#j_silder_outer .img-item").css("transform", "rotateX(" + (--num * 90) + "deg)");
+				});
+
+				var timejg = 4000; //轮播间隔时间
+				var time = setInterval(move, timejg);
+
+				function move() {
+					$("#j_silder_outer .img-item").css("transform", "rotateX(" + (--num * 90) + "deg)");
+				}
+				$('.slider-outer').hover(function() {
+					clearInterval(time);
+				}, function() {
+					time = setInterval(move, timejg);
+				});
+
+			})
+		</script>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/default.css">
+		<style type="text/css">
+			#gallery-wrapper {
+				position: relative;
+				max-width: 75%;
+				width: 75%;
+				margin: 50px auto;
+			}
+			
+			img.thumb {
+				width: 100%;
+				max-width: 100%;
+				height: auto;
+			}
+			
+			.white-panel {
+				position: absolute;
+				background: white;
+				border-radius: 5px;
+				box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+				padding: 10px;
+			}
+			
+			.white-panel h1 {
+				font-size: 1em;
+			}
+			
+			.white-panel h1 a {
+				color: #A92733;
+			}
+			
+			.white-panel:hover {
+				box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+				margin-top: -5px;
+				-webkit-transition: all 0.3s ease-in-out;
+				-moz-transition: all 0.3s ease-in-out;
+				-o-transition: all 0.3s ease-in-out;
+				transition: all 0.3s ease-in-out;
+			}
+		</style>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.3.css">
+		<style>
+			body {
+				background-color: #221715;
+			}
+			
+			.img1 {
+				position: absolute;
+				top: -20px;
+			}
+			
+			.box2 {
+				margin: 40px;
+			}
+			
+			.img2 {
+				position: absolute;
+				top: 604px;
+				left: 25px;
+			}
+			
+			.p1 {
+				position: absolute;
+				left: 40px;
+			}
+			
+			.img3 {
+				position: absolute;
+				left: 25px;
+				top: 1005px;
+			}
+			
+			.box3 {
+				margin: 20px;
+			}
+			
+			.coffee {
+				color: #9F6835;
+			}
+			.p2{
+				margin: 0 0 0 40px;
+			}
+			.img4{
+				position: absolute;
+				left: 25px;
+				top: 2540px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<img class="img1" src="img/咖啡.png" width="300px" height="200px">
+		
+		<div class="box1">
+			<script src="/demos/googlegg.js"></script>
+
+			<div class="slider-outer" id="j_silder_outer">
+				<div class="img-item">
+					<div class="img"></div>
+					<div class="img"></div>
+					<div class="img"></div>
+					<div class="img"></div>
+				</div>
+				<div class="img-item">
+					<div class="img"></div>
+					<div class="img"></div>
+					<div class="img"></div>
+					<div class="img"></div>
+				</div>
+				<div class="img-item">
+					<div class="img"></div>
+					<div class="img"></div>
+					<div class="img"></div>
+					<div class="img"></div>
+				</div>
+				<div class="img-item">
+					<div class="img"></div>
+					<div class="img"></div>
+					<div class="img"></div>
+					<div class="img"></div>
+				</div>
+				<div class="img-item">
+					<div class="img"></div>
+					<div class="img"></div>
+					<div class="img"></div>
+					<div class="img"></div>
+				</div>
+				<div class="btns" data-num="0">
+					<div class="prev">
+						<</div>
+							<div class="next">></div>
+					</div>
+				</div>
+			</div>
+			<div class="box2">
+				<img class="img2" src="img/QQ图片20181203184158.png" width="7px" height="30px">
+				<font color="white" face="微软雅黑" size="5">简介</font>
+				<br />
+				<font color="white" face="微软雅黑" size="3">
+					<p> 周日，在闲适的下午，我走进这里。</p>
+					<p>一杯伊莎贝尔森林硬豆为原料的咖啡，一首心中的旋律，在午后将我工作中的所有疲惫一扫而空。</p>
+					<p> 咖啡里一股花香，活泼的，俏皮的，如蒙娜丽莎的微笑般美好润心，如一个神秘的女子，轻轻敲击我的心门。</p>
+					<p>从来没有想过自己的爱情，将会是怎么样的不期而遇，或是怎么样的难求难得。</p>
+					<p>我是一个堂堂正正的七尺男儿，但是期待爱情如张爱玲的文字：于千万人之中遇见你所要遇见的人，于千万年之中，时间的无涯的荒野里，没有早一步，也没有晚一步，刚巧赶上了，那也没有别的话可说，惟有轻轻地问一声：“噢，你也在这里吗？”？</p>
+					<p>正想这环境雅致的咖啡店，就是那无涯的荒野，她轻轻地走来，是我预想中的，也是她预想中的，淡淡地笑意，契合的眼神，……永恒不变，哇，这就是爱。永恒不变的爱。</p>
+					<p>这爱在“慢吞吞”的咖啡里永恒。</p>
+					<p>期待。</p>
+					<p> 期待，某一天，我真的在这“慢吞吞”的世界遇到柔情似水至爱的她。正如我遇到了体贴入微的咖啡。</p>
+				</font>
+			</div>
+			<img class="img3" src="img/QQ图片20181203184158.png" width="7px" height="30px">
+			<font class="p1" color="white" face="微软雅黑" size="5">这里有超级好喝的咖啡！</font>
+			<font color="#221715" face="微软雅黑" size="5">简介</font>
+			<div class="box3">
+				<section id="gallery-wrapper">
+					<article class="white-panel">
+						<img src="img/抹茶星冰乐.png" class="thumb">
+						<h1><a href="#">抹茶星冰乐</a></h1>
+						<p class="coffee">抹茶的清新，加一份牛奶的丝滑，与冰块和稀奶油搅拌出特有的清爽。</p>
+					</article>
+					<article class="white-panel">
+						<img src="img/轻甜香草风味奶油冷萃冰咖啡.png" class="thumb">
+						<h1><a href="#">轻甜香草风味奶油冷萃冰咖啡</a></h1>
+						<p class="coffee">在冷萃冰咖啡的基础上，添加香草风味轻奶油。每份轻奶油都是根据西雅图的星巴克咖啡研发团队精心研发的配方新鲜手工调制而成， 使用脱脂奶也更符合现代人的健康生活理念。</p>
+					</article>
+					<article class="white-panel">
+						<img src="img/冷萃浮乐朵.png" class="thumb">
+						<h1><a href="#">冷萃浮乐朵™</a></h1>
+						<p class="coffee">冷萃咖啡，新西兰进口香草冰淇淋 </p>
+					</article>
+					<article class="white-panel">
+						<img src="img/茶瓦纳冰摇桃桃绿茶.png" class="thumb">
+						<h1><a href="#">茶瓦纳™ 冰摇桃桃绿茶/冰摇桃桃乌龙茶</a></h1>
+						<p class="coffee">内含原榨桃汁加上吃得到的大颗白桃果肉， 吃上一口，尝上一块，留住唇间的鲜醇甘厚。更有茶香留恋回味，给TA淘气的味蕾茶选。 更有两款特色茶底可供选择: 搭配碧螺春绿茶：鲜醇甘厚，绿意盎然，清雅幽香</p>
+					</article>
+
+					<article class="white-panel">
+						<img src="img/焦糖玛奇朵.png" class="thumb">
+						<h1><a href="#">焦糖玛奇朵（热/冷）</a></h1>
+						<p class="coffee">从蒸煮牛奶和添加风味糖浆开始，再倒入醇厚的浓缩咖啡，留下属于玛奇朵的独有印记。</p>
+					</article>
+					<article class="white-panel">
+						<img src="img/卡布奇诺.png" class="thumb">
+						<h1><a href="#">卡布奇诺（热/冷）</a></h1>
+						<p class="coffee">蒸煮牛奶与浓缩咖啡相融合，用丰厚绵密的奶泡覆顶，再撒上肉桂粉或可可粉。</p>
+					</article>
+					<article class="white-panel">
+						<img src="img/摩卡.png" class="thumb">
+						<h1><a href="#">摩卡（热/冷)</a></h1>
+						<p class="coffee">摩卡最初是指一种带有巧克力风味的咖啡豆，现在，这份巧克力咖啡仍然带给你纯正的温暖。在浓缩咖啡中加入摩卡酱，与蒸煮牛奶一起交织出丝滑与醇厚。</p>
+					</article>
+					<article class="white-panel">
+						<img src="img/茶瓦纳冰摇桃桃绿茶.png" class="thumb">
+						<h1><a href="#">茶瓦纳™ 冰摇柚柚蜂蜜红茶</a></h1>
+						<p class="coffee">混合了韩国柚子的清香、以色列柚汁的甘甜、美国粉柚汁的果香融于醇香红茶，颗颗饱满果粒和清甜柚子皮，点缀上洋槐蜂蜜层层深入的口感，让TA对这杯沁人心脾念念不忘 。</p>
+					</article>
+
+					<article class="white-panel">
+						<img src="img/焦糖浓缩咖啡星冰乐.png" class="thumb">
+						<h1><a href="#">焦糖浓缩咖啡星冰乐</a></h1>
+						<p class="coffee">香醇浓缩咖啡融于浓郁的焦糖咖啡星冰乐，最后在顶部的搅打稀奶油上淋上焦糖风味酱。</p>
+					</article>
+					<article class="white-panel">
+						<img src="img/阿馥奇朵.png" class="thumb">
+						<h1><a href="#">阿馥奇朵™</a></h1>
+						<p class="coffee">双份精萃浓缩咖啡，新西兰进口香草冰淇淋</p>
+					</article>
+
+					<article class="white-panel">
+						<img src="img/芒果西番莲果茶星冰乐.png" class="thumb">
+						<h1><a href="#">芒果西番莲果茶星冰乐</a></h1>
+						<p class="coffee">将花草茶的清爽，芒果西番莲果汁的酸甜与冰块融合。无需分清这一口是花香或果香。</p>
+					</article>
+					<article class="white-panel">
+						<img src="img/冰摇红莓黑加仑茶.png" class="thumb">
+						<h1><a href="#">冰摇红莓黑加仑茶</a></h1>
+						<p class="coffee">红莓黑加仑果汁融合醇香冰红茶，两款风格各异的莓子与冰红茶摇出各自的果香，却又浑然一体，迷恋在莓与茶的酸甜中。</p>
+					</article>
+					<article class="white-panel">
+						<img src="img/拿铁.png" class="thumb">
+						<h1><a href="#">拿铁（热/冷）</a></h1>
+						<p class="coffee">新鲜萃取的浓缩咖啡中缓缓倒入蒸煮牛奶，覆上轻柔奶泡，简单的香与纯。</p>
+					</article>
+					<article class="white-panel">
+						<img src="img/经典巧克力饮品.png" class="thumb">
+						<h1><a href="#">经典巧克力饮品（热/冷）</a></h1>
+						<p class="coffee">抵挡不住巧克力风味酱在蒸奶中飘散的浓郁可可香。只需在稀奶油上轻洒些许可可粉，就这样俘获你的心。</p>
+					</article>
+					<article class="white-panel">
+						<img src="img/美式咖啡.png" class="thumb">
+						<h1><a href="#">美式咖啡（热/冷）</a></h1>
+						<p class="coffee">简单即是美味，萃取经典浓缩咖啡，以水调和，香气浓郁蔓溢。</p>
+					</article>
+
+				</section>
+				<script src="js/jquery-1.11.0.min.js"></script>
+				<script src="js/pinterest_grid.js"></script>
+				<script type="text/javascript">
+					$(function() {
+						$("#gallery-wrapper").pinterest_grid({
+							no_columns: 4,
+							padding_x: 10,
+							padding_y: 10,
+							margin_bottom: 0,
+							single_column_breakpoint: 700
+						});
+
+					});
+				</script>
+			</div>
+			<img class="img4" src="img/QQ图片20181203184158.png" width="7px" height="30px">
+			<font class="p2" color="white" face="微软雅黑" size="5">还有无敌好吃的甜点！</font>
+			<div class="box4">
+				<div class="demo">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-sm-6">
+								<div class="box">
+									<div class="box-img">
+										<img src="img/浓醇三重黑巧克力蛋糕.png" alt="">
+									</div>
+									<div class="box-content">
+										<font color="whitesmoke">
+											<h4 class="title">浓醇三重黑巧克力蛋糕</h4></font>
+										<font color="white">
+											<p class="description">三种源自法国和比利时的纯正黑巧融合而成，不同产地的巧克力带来更加纯正浓郁的可可风味。蛋糕层与慕斯完美融合不仅提升了蛋糕整体的巧克力风味，还帮助降低了蛋糕的整体甜度.嵌入蛋糕胚中的顺滑生巧，惊喜味蕾。体验入口即化的浓郁可可风味。</p>
+										</font>
+										<ul class="social-links">
+											<li>
+												<a href="#" class="fa fa-qq"></a>
+											</li>
+											<li>
+												<a href="#" class="fa fa-weibo"></a>
+											</li>
+											<li>
+												<a href="#" class="fa fa-weixin"></a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4 col-sm-6">
+								<div class="box">
+									<div class="box-img">
+										<img src="img/纽约风浓郁重芝士蛋糕.png" alt="">
+									</div>
+									<div class="box-content">
+										<h4 class="title">纽约风浓郁重芝士蛋糕</h4>
+										<p class="description">地道的纽约芝士蛋糕配方与烘焙技术，带来最纯正的浓郁风味 清新独特的酸味奶油裱花，每一片都是独一无二的精致 香醇浓郁的重磅芝士，甄选新西兰进口芝士 重点感受：绵密口感与融入口中的醇厚芝士芳香 酥脆饼干底，带来丰富口感层次
+										</p>
+										<ul class="social-links">
+											<li>
+												<a href="#" class="fa fa-qq"></a>
+											</li>
+											<li>
+												<a href="#" class="fa fa-weibo"></a>
+											</li>
+											<li>
+												<a href="#" class="fa fa-weixin"></a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4 col-sm-6">
+								<div class="box">
+									<div class="box-img">
+										<img src="img/法式闪电泡芙.png" alt="">
+									</div>
+									<div class="box-content">
+										<h4 class="title">法式闪电泡芙</h4>
+										<p class="description">六种口味，丰富诱人：
+											<br />
+											开心果、香草、柠檬、焦糖、覆盆子、巧克力
+											<br />
+											产品小巧精致
+											<br />
+											表面装饰手工裱撒，独具匠心
+											<br />
+											超级超级好吃呀！
+											<br />
+											ヾ(≧▽≦*)o
+										</p>
+											<ul class="social-links">
+												<li>
+													<a href="#" class="fa fa-qq"></a>
+												</li>
+												<li>
+													<a href="#" class="fa fa-weibo"></a>
+												</li>
+												<li>
+													<a href="#" class="fa fa-weixin"></a>
+												</li>
+											</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</body>
+
+</html>
